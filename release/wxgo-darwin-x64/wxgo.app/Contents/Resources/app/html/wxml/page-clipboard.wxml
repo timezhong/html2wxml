@@ -1,0 +1,595 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>微云网页版－剪贴板</title>
+	<meta name="keywords" content="QQ, 腾讯,微云, 分享, 网盘, 网络硬盘, U盘, 云存储, 传输, 存储, 同步, 备份, 拍照, 上传, 下载, 中转, 文件, 照片, 相册, 离线, 传文件, wifi, cloud, 微云网页版, weiyun, weiyun web">  
+	<meta name="description" content="微云是腾讯公司为用户精心打造的一项智能云服务, 您可以通过微云方便地在手机和电脑之间同步文件、推送照片和传输数据。">
+	<viewnk rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+	<viewnk rel="stylesheet" href="../../css/page-home.css">
+	<viewnk rel="stylesheet" href="../../css/page-home-delay.css">
+	<viewnk rel="stylesheet" href="">
+	<viewnk rel="dns-prefetch" href="//qzonestyle.gtimg.cn">
+</head>
+<view class="page-clipboard">
+<!-- wrapper s -->
+<view class="layout-wrapper">
+    <!-- 通知消息 s -->
+    <!-- [ATTENTION!!] 通知是动态出现的时候，在 .msg-inner 上添加 .show，关闭通知的时候，在 .msg-inner 上添加 .hide -->
+    <view class="mod-msg">
+      <!-- [ATTENTION!!] 通知三种情况：正常通知 | 成功消息 .active | 出状况消息 .warning -->
+      <!-- [ATTENTION!!] 弹出通知的时候，sibliings().hide，当前通知 .show().addClass('show') -->
+      <view class="msg-inner clearfix show" style="display:none;">
+        <view class="txt"><i class="icon icon-msg" aria-hidden="true"></i>会员专享传输最高提速500%
+          <viewigator href="#" class="txt-link" id="js-vip-open">开通会员</navigator>
+        </view>
+        <!-- [ATTENTION!!] 关闭通知的时候，当前通知 .addClass('hide') -->
+        <viewigator href="javascript:void(0)" class="act-wrapper">
+          <i class="icon icon-msg-close" id="js-msg-close">关闭</i>
+        </navigator>
+      </view>
+
+      <!-- [ATTENTION!!] 弹出通知的时候，sibliings().hide，当前通知 .show().addClass('show-hide') -->
+      <view class="msg-inner active clearfix hide" id="js-msg-succ">
+        <view class="txt"><i class="icon icon-msg" aria-hidden="true"></i>开通会员成功</view>
+      </view>
+
+      <!-- [ATTENTION!!] 弹出通知的时候，sibliings().hide，当前通知 .show().addClass('show') -->
+      <view class="msg-inner warning clearfix fixed" style="display:none;" id="js-msg-warning">
+        <view class="txt"><i class="icon icon-msg" aria-hidden="true"></i>开通失败
+          <viewigator href="#" class="txt-link">点击重试</navigator>
+        </view>
+        <!-- [ATTENTION!!] 关闭通知的时候，当前通知 .addClass('hide') -->
+        <viewigator href="javascript:void(0)" class="act-wrapper">
+          <i class="icon icon-msg-close">关闭</i>
+        </navigator>
+      </view>
+
+      <!-- [ATTENTION!!] 该通知只用在剪贴板页面，弹出通知的时候，sibliings().hide，当前通知 .show().addClass('show-hide') -->
+      <view class="msg-inner active clearfix" id="js-msg-sent" style="display:none;">
+        <view class="txt"><i class="icon icon-msg" aria-hidden="true"></i>发送成功！可以在您其他安装了微云的设备上接收</view>
+      </view>
+
+    </view>
+    <!-- 通知消息 e -->
+    <!-- 头部 S -->
+    <view class="layout-header">
+        <view class="layout-header-inner">
+            <!-- 顶部导航 s -->
+            <view class="mod-nav clearfix">
+                <view class="logo">
+                    <viewigator href="#" title="腾讯微云">腾讯微云</navigator>
+                </view>
+                <!-- 传输面板 s -->
+                <view class="mod-act">	
+                    <viewigator class="act-link" href="page-task-controller.html" title="文件管理"><i class="icon icon-act"></i></navigator>
+                	<viewigator class="act-link act" href="#" title="文件同步" style="display:none;"><!-- 在任务管理器页面加.act,其他页面去掉 -->
+                		<i class="icon icon-sync"></i>
+                		<text class="sync-num">56</text>
+                		<i class="icon icon-redpoint-error" style="display:none;"></i><!-- 任务有错误，则数字替换成这个icon -->
+                	</navigator>
+                </view>	
+                <!-- 传输面板 e -->
+                <!--搜索 s -->
+                <view class="mod-search"><!--获得焦点状态添加类名focus--><!--搜索中加类名searching--><!--输入完毕加类名istext,未输入任何东西不加-->
+                  <i class="icon icon-search"></i>
+                  <label>输入文件名</label>
+                  <input class="mod-input" type="text" aria-label="输入文件名并按下回车进行搜索" tabindex="0">
+                	<viewigator class="close" href="javascript:void(0)" aria-label="关闭搜索界面" hidefocus="on"><i class="icon icon-close"></i></navigator>
+                </view>		
+                <!--搜索 e -->	
+                <!-- 视图模式 s -->
+                <view class="mod-view">
+                	<view class="view-item-list clearfix">
+                		<!-- 视图模式切换 -->
+                		<view class="view-item clearfix">
+                			<viewigator class="item-list cur" href="page-home.html" title="列表视图">
+                				<i class="icon icon-list"></i>
+                			</navigator>
+                			<viewigator class="item-list" href="page-thumbnail.html" title="缩略图视图">
+                				<i class="icon icon-thum"></i>
+                			</navigator>
+                		</view>
+                		<!-- 排序方式切换 -->
+                		<view class="view-item clearfix">
+                			<viewigator class="item-list" href="#" title="按时间排序">
+                				<i class="icon icon-ren"></i>
+                			</navigator>
+                			<viewigator class="item-list cur" href="#" title="按字母排序">
+                				<i class="icon icon-letter"></i>
+                			</navigator>
+                		</view>
+                		<!-- [ATTENTION!!] 只有“回收站”面板需要显示 s -->
+                		<view class="view-item clearfix item-trash">
+                			<viewigator class="item-list cur" href="#">删除时间</navigator>
+                			<viewigator class="item-list" href="#">过期时间</navigator>
+                		</view>
+                		<!-- [ATTENTION!!] 只有“回收站”面板需要显示 e -->
+                		<!-- [ATTENTION!!] 只有“文档”面板需要显示 s -->
+                		<view class="view-item clearfix item-doctype">
+                			<viewigator class="item-list cur" href="#" title="">全部</navigator>
+                			<viewigator class="item-list" href="#" title="">DOC</navigator>
+                			<viewigator class="item-list" href="#" title="">XLS</navigator>
+                			<viewigator class="item-list" href="#" title="">PPT</navigator>
+                			<viewigator class="item-list" href="#" title="">PDF</navigator>
+                		</view>
+                		<!-- [ATTENTION!!] 只有“文档”面板需要显示 e -->
+                		<!-- [ATTENTION!!] 只有“图片”面板需要显示 s -->
+                		<view class="view-item clearfix item-picture">
+                			<viewigator class="item-list cur" href="#" title="">全部</navigator>
+                			<viewigator class="item-list" href="#" title="">分组</navigator>
+                		</view>
+                		<!-- [ATTENTION!!] 只有“图片”面板需要显示 e -->
+                	</view>
+                </view>
+                <!-- 视图模式 e  -->
+                <!-- 用到的css：mod-nav.css -->
+
+                <!-- 添加 s -->
+                <!-- [ATTENTION!!] 切换 .on -->
+                <view class="mod-upload">
+                	<viewigator class="btn btn-l btn-upload" href="#"><i class="icon icon-add"></i><text class="btn-txt">添加</text></navigator>
+                    <!-- 添加内容 s -->
+                    <view class="mod-bubble-dropdown with-border top-right upload-bubble-dropdown">
+                        <view class="upload-dropdown clearfix">
+                            <view class="upload-item">
+                                <view class="inner">
+                                    <b class="icon icon-upload icon-upload-file"></b>
+                                    <view class="txt">上传文件</view>
+                                </view>
+                            </view>
+                            <view class="upload-item">
+                                <view class="inner">
+                                    <b class="icon icon-upload icon-upload-dir"></b>
+                                    <view class="txt">上传文件夹</view>
+                                </view>
+                            </view>
+                            <view class="upload-item">
+                                <view class="inner">
+                                    <b class="icon icon-upload icon-create-dir"></b>
+                                    <view class="txt">创建文件夹</view>
+                                </view>
+                            </view>
+                            <view class="upload-item">
+                                <view class="inner">
+                                    <b class="icon icon-upload icon-add-note"></b>
+                                    <view class="txt">添加笔记</view>
+                                </view>
+                            </view>
+                            <view class="upload-item">
+                                <view class="inner">
+                                    <b class="icon icon-upload icon-offline-download"></b>
+                                    <view class="txt">离线下载</view>
+                                </view>
+                            </view>
+                        </view>
+                        <b class="bubble-arrow-border"></b>
+                        <b class="bubble-arrow"></b>
+                    </view>
+                    <!-- 添加内容 e -->
+                </view>
+                <!-- 添加 e-->
+            </view>
+            <!-- 顶部导航 e -->
+        </view>
+    </view>
+    <!-- 头部 E -->
+
+    <!-- 主体 s -->
+    <view class="layout-body">
+        <view class="layout-body-inner">
+            <!-- 左侧栏 s -->
+            <view class="layout-aside">
+                <!-- layout-aside-hd s -->
+                <view class="layout-aside-hd">
+                    <!-- 用到的样式：mod-user.css -->
+
+                    <!-- 用户头像 s -->
+                    <view class="mod-user mod-user-vip "><!-- vip用户加类名 mod-user-vip,vip过期用户加类名 mod-user-vip-expire-->
+                        <view class="user-avatar">
+                            <viewigator class="user-avatar-pic" href="#">
+                                <img src="../../img/temp/avatar.png" alt="用户昵称">
+                                <!-- 会员等级icon,等级n已开通状态为.icon-vip-n-on-m,过期状态为.icon-vip-n-off-m -->
+                                <i class="icon icon-vip-m icon-vip-1-off-m" title="VIP会员"></i>
+                            </navigator>
+                        </view>
+                        <!-- 用户信息 s -->
+                        <view class="mod-bubble-dropdown acct-bubble-dropdown">
+                            <view class="acct-dropdown">
+                                <view class="acct-info">
+                                    <!-- <b class="acct-info-bg" style="background-image:url(http://qzonestyle.gtimg.cn/aoi/sola/20141222185945_O20XHGAoR2.jpg)"></b> -->
+                                    <view class="name-container clearfix">
+                                        <text class="name">进击的马里奥</text>
+                                        <!-- <viewigator class="btn" href="javascript:void(0);" title="退出登录"><i class="icon icon-logout"></i></navigator> -->
+                                        <!-- <button type="submit" class="btn btn-icon">退出登录</button> -->
+                                    </view>
+                                    <!-- [ATTENTION!!] 超出容量 -->
+                                    <view class="space-container exceed">
+                                        <view class="txt">已使用:14112.12GB    总容量:14112.12GB</view>
+                                        <view class="quota-graph-container"> 
+                                            <view class="quota-graph"></view>
+                                            <view class="quota-graph-bar"></view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="with-border">
+                                    <!-- [ATTENTIN!!] 没有会员添加 .fail -->
+                                    <view class="acct-item">
+                                        <viewigator href="#">
+                                            <!-- [ATTENTION!!] 未开通会员 | 会员已到期，添加 .fail -->
+                                            <text class="txt fail">会员2017-06-12到期</text>
+                                            <!-- [ATTENTION!!] 文案：开通|续费 -->
+                                            <viewigator href="#" class="btn-link">续费</navigator>
+                                        </navigator>
+                                    </view>
+                                    <view class="acct-item main">
+                                        <text class="txt">购买容量</text>
+                                        <!-- 新增！！ -->
+                                        <text class="tag tag-fornew"></text>
+                                    </view>
+                                    <view class="acct-item"><text class="txt">开启独立密码</text></view>
+                                    <view class="acct-item main"><text class="txt">帮助与反馈</text></view>
+                                    <view class="acct-item"><text class="txt">退出登录</text></view>
+                                </view>
+                            </view>
+                        </view>
+                        <!-- 用户信息 e -->
+                    </view>
+                    <!-- 用户头像 s -->
+
+                </view>
+                <!-- layout-aside-hd e -->
+                <!-- layout-aside-bd s -->
+                <view class="layout-aside-bd">
+                    <!-- 菜单 s -->
+                    <view class="mod-menu">
+                    	<view class="add-in">
+                    		<!-- 开通会员 | 续费会员 -->
+                    		<viewigator href="#" class="btn btn-m btn-vip">开通会员</navigator>
+                    	</view>
+                    	<!-- 最近s -->
+                    	<view class="menu-item">
+                    		<view class="menu-item-bd">
+                    			<view class="menu-list">
+                    				<view>
+                    					<viewigator href="page-recent.html"><i class="icon icon-ren"></i><text class="menu-tit">最近</text></navigator>
+                    				</view>
+                    			</view>
+                    		</view>
+                    	</view>
+                    	<!-- 最近e -->
+                    	<!-- 文件s -->
+                    	<view class="menu-item">
+                    		<view class="menu-item-hd">
+                    			<view class="tit">文件</view>
+                    		</view>
+                    		<view class="menu-item-bd">
+                    			<view class="menu-list">
+                    				<view class="cur">
+                    					<viewigator href="page-home.html"><i class="icon icon-all"></i><text class="menu-tit">全部</text></navigator>
+                    				</view>
+                    				<view>
+                    					<viewigator href="page-doctype.html"><i class="icon icon-doc"></i><text class="menu-tit">文档</text></navigator>
+                    				</view>
+                    				<view>
+                    					<viewigator href="page-picture.html"><i class="icon icon-pic"></i><text class="menu-tit">图片</text></navigator>
+                    				</view>
+                    				<view>
+                    					<viewigator href="page-doctype.html"><i class="icon icon-video"></i><text class="menu-tit">视频</text></navigator>
+                    				</view>
+                    				<view>
+                    					<viewigator href="page-note.html"><i class="icon icon-note"></i><text class="menu-tit">笔记</text></navigator>
+                    				</view>
+                    				<view>
+                    					<viewigator href="page-doctype.html"><i class="icon icon-music"></i><text class="menu-tit">音乐</text></navigator>
+                    				</view>
+                    			</view>
+                    		</view>
+                    	</view>
+                    	<!-- 文件e -->
+                    	<!-- 照片s -->
+                    	<view class="menu-item">
+                    		<view class="menu-item-hd">
+                    			<view class="tit">照片</view>
+                    		</view>
+                    		<view class="menu-item-bd">
+                    			<view class="menu-list">
+                    				<view>
+                    					<viewigator href="javascript:void(0)"><i class="icon icon-time"></i><text class="menu-tit">时间</text></navigator>
+                    				</view>
+                    				<view>
+                    					<viewigator href="javascript:void(0)"><i class="icon icon-location"></i><text class="menu-tit">地点</text></navigator>
+                    				</view>
+                    				<view>
+                    					<viewigator href="javascript:void(0)"><i class="icon icon-tag"></i><text class="menu-tit">标签</text></navigator>
+                    				</view>
+                    			</view>
+                    		</view>
+                    	</view>
+                    	<!-- 照片e -->
+                    	<!-- 我的s -->
+                    	<view class="menu-item">
+                    		<view class="menu-item-hd">
+                    			<view class="tit">我的</view>
+                    		</view>
+                    		<view class="menu-item-bd">
+                    			<view class="menu-list">
+                    				<view>
+                    					<!-- [ATTENTION!!] 有还木有查看的接收信息时， 添加 .new  -->
+                    					<viewigator class="new" href="page-clipboard.html"><i class="icon icon-clip"></i><text class="menu-tit">剪贴板</text></navigator>
+                    				</view>
+                    				<view>
+                    					<viewigator href="page-share-links.html"><i class="icon icon-share"></i><text class="menu-tit">分享链接</text></navigator>
+                    				</view>
+                    				<view>
+                    					<viewigator href="page-trash.html"><i class="icon icon-trash"></i><text class="menu-tit">回收站</text></navigator>
+                    				</view>
+                    			</view>
+                    		</view>
+                    	</view>
+                    	<!-- 我的e -->
+
+                    	<view class="menu-item menu-notice">
+                    		<viewigator href="">微云会员调整公告</navigator>
+                    	</view>
+                    </view>
+                    <!-- 菜单 s -->
+                </view>
+                <!-- layout-aside-bd e -->
+                <!-- layout-aside-ft s -->
+                <view class="layout-aside-ft">
+                    <!-- 帮助 s -->
+                    <view class="mod-txt-list">
+                    	<view class="txt-list clearfix">
+                    		<view class="txt-item"><viewigator href="javascript:void(0)">版权声明</navigator>
+                                <!-- 版权声明内容 s -->
+                                <view class="mod-bubble-dropdown with-border bottom-left copyright-bubble-dropdown">
+                                    <view class="txt-dropdown">
+                                        <view>您应尊重相关作品著作权人合法权益，未经著作权人合法授权，不能违法上传、储存、分享他人作品。</view>
+                                    </view>
+                                    <b class="bubble-arrow-border"></b>
+                                    <b class="bubble-arrow"></b>
+                                </view>
+                                <!-- 版权声明内容 e -->
+                            </view>
+                    		<view class="txt-item"><viewigator href="javascript:void(0)">投诉指引</navigator></view>
+                    	</view>
+                    </view>
+                    <!-- 帮助 e -->
+                </view>
+                <!-- layout-aside-hd e -->
+            </view>
+            <!-- 左侧栏 e -->
+
+            <!-- 主体内容 s -->
+            <view class="layout-main">
+                <view class="layout-main-bd">
+                    <!-- tab 切换 s -->
+                    <!-- tab 切换 -->
+                    <view class="mod-tab">
+                        <view class="tab-hd">
+                            <view class="tab-list clearfix">
+                                <!-- [ATTENTION!!] 选中的时候添加 .on -->
+                                <view class="tab-item on" id="js-send-tab">
+                                    <viewigator href="javascript:void(0)" class="btn btn-s">发送</navigator>
+                                    <b class="spliter"></b>
+                                </view>
+                                <!-- [ATTENTION!!] 有未查看消息是，添加 .new -->
+                                <view class="tab-item new" id="js-receive-tab">
+                                    <viewigator href="javascript:void(0)" class="btn btn-s">接收</navigator>
+                                    <b class="spliter"></b>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="tab-bd">
+                            <!-- [ATTENTION!!] JS 动态计算 -->
+                            <view class="tab-cont-list">
+                                <view class="tab-cont-item" id="js-sender">
+                                    <view class="editor-wrapper">
+                                        <!-- [ATTENTION!!] JS 动态计算 -->
+                                        <textarea style="height:767px;" class="editor" placeholder="输入或粘贴一段内容，可以发送到自己的手机上（需要安装手机版微云）"></textarea>
+                                    </view>
+                                    <view class="cont-ft clearfix" id="js-send">
+                                        <!-- [ATTENTION!!] disable 状态，添加 .disabled -->
+                                        <viewigator href="" class="btn btn-w disable">清空</navigator>
+                                        <viewigator href="" class="btn btn-l disable">发送</navigator>
+                                        <!-- <viewigator href="" class="btn btn-l sending">发送中</navigator> -->
+                                    </view>
+                                </view>
+                                <!-- [ATTENTION!!] JS 动态计算高度 -->
+                                <!-- [ATTENTION!!] 进入某一条接收的信息时，添加 .show-exp -->
+                                <view class="tab-cont-item has-inner-cont" id="js-receiver" style="height: 767px;">
+                                    <view class="inner-cont-wrapper">
+                                        <!-- 接收列表 s -->
+                                        <view class="inner-cont-list">
+                                            <view class="inner-cont-item" id="js-goexp"><view class="text">text1</view></view>
+                                            <view class="inner-cont-item" id="js-goblank"><view class="text">[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！</view></view>
+                                            <view class="inner-cont-item"><view class="text">text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3</view></view>
+                                        </view>
+                                        <!-- 接收列表 e -->
+                                        <!-- 接收内容 s -->
+                                        <view class="inner-cont-exp">
+                                            <view class="exp-hd mod-act-list">
+                                                <viewigator href="" class="act-list"><i class="icon icon-goback"></i>返回</navigator>
+                                                <view class="btn-group">
+                                                    <viewigator href="" class="btn btn-w">复制</navigator>
+                                                    <viewigator href="" class="btn btn-w">删除</navigator>
+                                                </view>
+                                            </view>
+                                            <!-- [ATTENTION!!] JS 动态计算高度 -->
+                                            <view class="exp-bd" style="height:700px;">
+                                                dddddddd
+                                            </view>
+                                        </view>
+                                        <!-- 接收内容 e -->
+                                    </view>
+
+                                    <!-- 空状态：没有接收内容 s -->
+                                    <!-- 空状态 s -->
+                                    <view class="mod-status">
+                                      <view class="page-loading-box" style="display:none;">
+                                        <!-- 页面 loading -->
+                                        <view class="load-more">
+                                          <i class="icon-page-loading">正在加载</i>
+                                        </view>
+                                      </view>
+                                      <view class="page-loading-search">
+                                        <!-- 页面 loading -->
+                                        <view class="load-more">
+                                          <i class="icon-page-loading-search"></i>
+                                          <view class="txt">正在搜索...</view>
+                                        </view>
+                                      </view>
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- 目录为空 -->
+                                        <view class="status-inner" id="js-nofile" style="">
+                                          <i class="icon icon-nofile"></i>
+                                          <view class="title">暂无文件</view>
+                                          <view class="txt">请点击左上角的“上传”按钮添加</view>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- 任务为空 -->
+                                        <view class="status-inner" id="js-nofile" style="">
+                                          <i class="icon icon-nofile"></i>
+                                          <view class="title">没有任务</view>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- 最近为空 -->
+                                        <view class="status-inner" id="js-norecent" style="">
+                                          <i class="icon icon-norecent"></i>
+                                          <view class="title">最近为空</view>
+                                          <view class="txt">您最近还没有操作过任何文件哦~</view>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- 笔记为空 -->
+                                        <view class="status-inner" id="js-nonote" style="">
+                                          <i class="icon icon-nonote"></i>
+                                          <view class="title">暂无笔记</view>
+                                          <view class="txt">您可以通过“新建笔记”进行添加</view>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- 文档为空 -->
+                                        <view class="status-inner" id="js-notxt" style="">
+                                          <i class="icon icon-notxt"></i>
+                                          <view class="title">暂无文档</view>
+                                          <view class="txt">请点击左上方的“上传”按钮添加</view>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;" id="js-clipboard"> 
+                                        <!-- 剪贴板无内容 -->
+                                        <view class="status-inner" id="js-noclipboard" style="">
+                                          <i class="icon icon-nocont"></i>
+                                          <view class="title">剪贴板无内容</view>
+                                          <view class="txt">安装微云手机版，使用“剪贴板”功能可以将文字发送到这里</view>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- 文档为空 -->
+                                        <view class="status-inner" id="js-nopicture" style="">
+                                          <i class="icon icon-nopicture"></i>
+                                          <view class="title">暂无图片</view>
+                                          <view class="txt">请点击左上方的“上传”按钮添加</view>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- 分享链接为空 -->
+                                        <view class="status-inner" id="js-noshare" style="">
+                                          <i class="icon icon-noshare"></i>
+                                          <view class="txt">快把你的文件分享给好友吧！</view>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- 音乐为空 -->
+                                        <view class="status-inner" id="js-nomusic" style="">
+                                          <i class="icon icon-nomusic"></i>
+                                          <view class="title">暂无音乐</view>
+                                          <view class="txt">请点击左上方的“上传”按钮添加</view>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- 回收站为空 -->
+                                        <view class="status-inner" id="js-notrash" style="">
+                                          <i class="icon icon-notrash"></i>
+                                          <view class="title">回收站为空</view>
+                                          <view class="txt">您可以在这里找回最近15天删除的文件</view>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- 视频为空 -->
+                                        <view class="status-inner" id="js-novideo" style="">
+                                          <i class="icon icon-novideo"></i>
+                                          <view class="title">暂无视频</view>
+                                          <view class="txt">请点击左上角的“上传”按钮添加</view>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- 搜索不到关键字 -->
+                                        <view class="status-inner" id="js-nosearch" style="">
+                                          <i class="icon icon-nosearch"></i>
+                                          <view class="txt">抱歉，未找到匹配文件</view>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- 全部 -->
+                                        <view class="status-inner" id="js-all" style="">
+                                          <i class="icon icon-all"></i>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- qq离线文件 -->
+                                        <view class="status-inner" id="js-qqoffline-file" style="">
+                                          <i class="icon icon-qqoffline-file"></i>
+                                        </view>
+                                      </view>
+
+                                      <view class="empty-box" style="display:none;">
+                                        <!-- 敏感信息 -->
+                                        <view class="status-inner" style="">
+                                          <i class="icon icon-sensitive"></i>
+                                        </view>
+                                      </view>
+                                    </view>
+                                    <!-- 空状态：没有接收内容 e -->
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- tab 切换 e -->
+                </view>
+            </view>
+            <!-- 主体内容 e -->
+        </view>
+    </view>
+    <!-- 主体 e -->
+</view>
+<!-- wrapper e -->
+
+	<!-- 演示脚本，前台GG请删除 S -->
+	<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qz-act/js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="../../js/wy.js"></script>
+    <script type="text/javascript" src="../../js/bubble.js"></script>
+  <script type="text/javascript" src="../../js/clipboard.js"></script>
+  <script type="text/javascript" src="../../js/task-ctrl.js"></script>
+	<script type="text/javascript" src="../../js/msg.js"></script>
+	<!-- <script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script> -->
+	<!-- 演示脚本，前台GG请删除 E -->
+</view>
+</html>

@@ -1,0 +1,595 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>微云网页版－剪贴板</title>
+	<meta name="keywords" content="QQ, 腾讯,微云, 分享, 网盘, 网络硬盘, U盘, 云存储, 传输, 存储, 同步, 备份, 拍照, 上传, 下载, 中转, 文件, 照片, 相册, 离线, 传文件, wifi, cloud, 微云网页版, weiyun, weiyun web">  
+	<meta name="description" content="微云是腾讯公司为用户精心打造的一项智能云服务, 您可以通过微云方便地在手机和电脑之间同步文件、推送照片和传输数据。">
+	<link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../../css/page-home.css">
+	<link rel="stylesheet" href="../../css/page-home-delay.css">
+	<link rel="stylesheet" href="">
+	<link rel="dns-prefetch" href="//qzonestyle.gtimg.cn">
+</head>
+<body class="page-clipboard">
+<!-- wrapper s -->
+<div class="layout-wrapper">
+    <!-- 通知消息 s -->
+    <!-- [ATTENTION!!] 通知是动态出现的时候，在 .msg-inner 上添加 .show，关闭通知的时候，在 .msg-inner 上添加 .hide -->
+    <div class="mod-msg">
+      <!-- [ATTENTION!!] 通知三种情况：正常通知 | 成功消息 .active | 出状况消息 .warning -->
+      <!-- [ATTENTION!!] 弹出通知的时候，sibliings().hide，当前通知 .show().addClass('show') -->
+      <div class="msg-inner clearfix show" style="display:none;">
+        <p class="txt"><i class="icon icon-msg" aria-hidden="true"></i>会员专享传输最高提速500%
+          <a href="#" class="txt-link" id="js-vip-open">开通会员</a>
+        </p>
+        <!-- [ATTENTION!!] 关闭通知的时候，当前通知 .addClass('hide') -->
+        <a href="javascript:void(0)" class="act-wrapper">
+          <i class="icon icon-msg-close" id="js-msg-close">关闭</i>
+        </a>
+      </div>
+
+      <!-- [ATTENTION!!] 弹出通知的时候，sibliings().hide，当前通知 .show().addClass('show-hide') -->
+      <div class="msg-inner active clearfix hide" id="js-msg-succ">
+        <p class="txt"><i class="icon icon-msg" aria-hidden="true"></i>开通会员成功</p>
+      </div>
+
+      <!-- [ATTENTION!!] 弹出通知的时候，sibliings().hide，当前通知 .show().addClass('show') -->
+      <div class="msg-inner warning clearfix fixed" style="display:none;" id="js-msg-warning">
+        <p class="txt"><i class="icon icon-msg" aria-hidden="true"></i>开通失败
+          <a href="#" class="txt-link">点击重试</a>
+        </p>
+        <!-- [ATTENTION!!] 关闭通知的时候，当前通知 .addClass('hide') -->
+        <a href="javascript:void(0)" class="act-wrapper">
+          <i class="icon icon-msg-close">关闭</i>
+        </a>
+      </div>
+
+      <!-- [ATTENTION!!] 该通知只用在剪贴板页面，弹出通知的时候，sibliings().hide，当前通知 .show().addClass('show-hide') -->
+      <div class="msg-inner active clearfix" id="js-msg-sent" style="display:none;">
+        <p class="txt"><i class="icon icon-msg" aria-hidden="true"></i>发送成功！可以在您其他安装了微云的设备上接收</p>
+      </div>
+
+    </div>
+    <!-- 通知消息 e -->
+    <!-- 头部 S -->
+    <div class="layout-header">
+        <div class="layout-header-inner">
+            <!-- 顶部导航 s -->
+            <div class="mod-nav clearfix">
+                <div class="logo">
+                    <a href="#" title="腾讯微云">腾讯微云</a>
+                </div>
+                <!-- 传输面板 s -->
+                <div class="mod-act">	
+                    <a class="act-link" href="page-task-controller.html" title="文件管理"><i class="icon icon-act"></i></a>
+                	<a class="act-link act" href="#" title="文件同步" style="display:none;"><!-- 在任务管理器页面加.act,其他页面去掉 -->
+                		<i class="icon icon-sync"></i>
+                		<span class="sync-num">56</span>
+                		<i class="icon icon-redpoint-error" style="display:none;"></i><!-- 任务有错误，则数字替换成这个icon -->
+                	</a>
+                </div>	
+                <!-- 传输面板 e -->
+                <!--搜索 s -->
+                <div class="mod-search"><!--获得焦点状态添加类名focus--><!--搜索中加类名searching--><!--输入完毕加类名istext,未输入任何东西不加-->
+                  <i class="icon icon-search"></i>
+                  <label>输入文件名</label>
+                  <input class="mod-input" type="text" aria-label="输入文件名并按下回车进行搜索" tabindex="0">
+                	<a class="close" href="javascript:void(0)" aria-label="关闭搜索界面" hidefocus="on"><i class="icon icon-close"></i></a>
+                </div>		
+                <!--搜索 e -->	
+                <!-- 视图模式 s -->
+                <div class="mod-view">
+                	<div class="view-item-list clearfix">
+                		<!-- 视图模式切换 -->
+                		<div class="view-item clearfix">
+                			<a class="item-list cur" href="page-home.html" title="列表视图">
+                				<i class="icon icon-list"></i>
+                			</a>
+                			<a class="item-list" href="page-thumbnail.html" title="缩略图视图">
+                				<i class="icon icon-thum"></i>
+                			</a>
+                		</div>
+                		<!-- 排序方式切换 -->
+                		<div class="view-item clearfix">
+                			<a class="item-list" href="#" title="按时间排序">
+                				<i class="icon icon-ren"></i>
+                			</a>
+                			<a class="item-list cur" href="#" title="按字母排序">
+                				<i class="icon icon-letter"></i>
+                			</a>
+                		</div>
+                		<!-- [ATTENTION!!] 只有“回收站”面板需要显示 s -->
+                		<div class="view-item clearfix item-trash">
+                			<a class="item-list cur" href="#">删除时间</a>
+                			<a class="item-list" href="#">过期时间</a>
+                		</div>
+                		<!-- [ATTENTION!!] 只有“回收站”面板需要显示 e -->
+                		<!-- [ATTENTION!!] 只有“文档”面板需要显示 s -->
+                		<div class="view-item clearfix item-doctype">
+                			<a class="item-list cur" href="#" title="">全部</a>
+                			<a class="item-list" href="#" title="">DOC</a>
+                			<a class="item-list" href="#" title="">XLS</a>
+                			<a class="item-list" href="#" title="">PPT</a>
+                			<a class="item-list" href="#" title="">PDF</a>
+                		</div>
+                		<!-- [ATTENTION!!] 只有“文档”面板需要显示 e -->
+                		<!-- [ATTENTION!!] 只有“图片”面板需要显示 s -->
+                		<div class="view-item clearfix item-picture">
+                			<a class="item-list cur" href="#" title="">全部</a>
+                			<a class="item-list" href="#" title="">分组</a>
+                		</div>
+                		<!-- [ATTENTION!!] 只有“图片”面板需要显示 e -->
+                	</div>
+                </div>
+                <!-- 视图模式 e  -->
+                <!-- 用到的css：mod-nav.css -->
+
+                <!-- 添加 s -->
+                <!-- [ATTENTION!!] 切换 .on -->
+                <div class="mod-upload">
+                	<a class="btn btn-l btn-upload" href="#"><i class="icon icon-add"></i><span class="btn-txt">添加</span></a>
+                    <!-- 添加内容 s -->
+                    <div class="mod-bubble-dropdown with-border top-right upload-bubble-dropdown">
+                        <ul class="upload-dropdown clearfix">
+                            <li class="upload-item">
+                                <div class="inner">
+                                    <b class="icon icon-upload icon-upload-file"></b>
+                                    <p class="txt">上传文件</p>
+                                </div>
+                            </li>
+                            <li class="upload-item">
+                                <div class="inner">
+                                    <b class="icon icon-upload icon-upload-dir"></b>
+                                    <p class="txt">上传文件夹</p>
+                                </div>
+                            </li>
+                            <li class="upload-item">
+                                <div class="inner">
+                                    <b class="icon icon-upload icon-create-dir"></b>
+                                    <p class="txt">创建文件夹</p>
+                                </div>
+                            </li>
+                            <li class="upload-item">
+                                <div class="inner">
+                                    <b class="icon icon-upload icon-add-note"></b>
+                                    <p class="txt">添加笔记</p>
+                                </div>
+                            </li>
+                            <li class="upload-item">
+                                <div class="inner">
+                                    <b class="icon icon-upload icon-offline-download"></b>
+                                    <p class="txt">离线下载</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <b class="bubble-arrow-border"></b>
+                        <b class="bubble-arrow"></b>
+                    </div>
+                    <!-- 添加内容 e -->
+                </div>
+                <!-- 添加 e-->
+            </div>
+            <!-- 顶部导航 e -->
+        </div>
+    </div>
+    <!-- 头部 E -->
+
+    <!-- 主体 s -->
+    <div class="layout-body">
+        <div class="layout-body-inner">
+            <!-- 左侧栏 s -->
+            <div class="layout-aside">
+                <!-- layout-aside-hd s -->
+                <div class="layout-aside-hd">
+                    <!-- 用到的样式：mod-user.css -->
+
+                    <!-- 用户头像 s -->
+                    <div class="mod-user mod-user-vip "><!-- vip用户加类名 mod-user-vip,vip过期用户加类名 mod-user-vip-expire-->
+                        <div class="user-avatar">
+                            <a class="user-avatar-pic" href="#">
+                                <img src="../../img/temp/avatar.png" alt="用户昵称">
+                                <!-- 会员等级icon,等级n已开通状态为.icon-vip-n-on-m,过期状态为.icon-vip-n-off-m -->
+                                <i class="icon icon-vip-m icon-vip-1-off-m" title="VIP会员"></i>
+                            </a>
+                        </div>
+                        <!-- 用户信息 s -->
+                        <div class="mod-bubble-dropdown acct-bubble-dropdown">
+                            <div class="acct-dropdown">
+                                <div class="acct-info">
+                                    <!-- <b class="acct-info-bg" style="background-image:url(http://qzonestyle.gtimg.cn/aoi/sola/20141222185945_O20XHGAoR2.jpg)"></b> -->
+                                    <div class="name-container clearfix">
+                                        <span class="name">进击的马里奥</span>
+                                        <!-- <a class="btn" href="javascript:void(0);" title="退出登录"><i class="icon icon-logout"></i></a> -->
+                                        <!-- <button type="submit" class="btn btn-icon">退出登录</button> -->
+                                    </div>
+                                    <!-- [ATTENTION!!] 超出容量 -->
+                                    <div class="space-container exceed">
+                                        <p class="txt">已使用:14112.12GB    总容量:14112.12GB</p>
+                                        <div class="quota-graph-container"> 
+                                            <div class="quota-graph"></div>
+                                            <div class="quota-graph-bar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="with-border">
+                                    <!-- [ATTENTIN!!] 没有会员添加 .fail -->
+                                    <li class="acct-item">
+                                        <a href="#">
+                                            <!-- [ATTENTION!!] 未开通会员 | 会员已到期，添加 .fail -->
+                                            <span class="txt fail">会员2017-06-12到期</span>
+                                            <!-- [ATTENTION!!] 文案：开通|续费 -->
+                                            <a href="#" class="btn-link">续费</a>
+                                        </a>
+                                    </li>
+                                    <li class="acct-item main">
+                                        <span class="txt">购买容量</span>
+                                        <!-- 新增！！ -->
+                                        <span class="tag tag-fornew"></span>
+                                    </li>
+                                    <li class="acct-item"><span class="txt">开启独立密码</span></li>
+                                    <li class="acct-item main"><span class="txt">帮助与反馈</span></li>
+                                    <li class="acct-item"><span class="txt">退出登录</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 用户信息 e -->
+                    </div>
+                    <!-- 用户头像 s -->
+
+                </div>
+                <!-- layout-aside-hd e -->
+                <!-- layout-aside-bd s -->
+                <div class="layout-aside-bd">
+                    <!-- 菜单 s -->
+                    <div class="mod-menu">
+                    	<div class="add-in">
+                    		<!-- 开通会员 | 续费会员 -->
+                    		<a href="#" class="btn btn-m btn-vip">开通会员</a>
+                    	</div>
+                    	<!-- 最近s -->
+                    	<div class="menu-item">
+                    		<div class="menu-item-bd">
+                    			<ul class="menu-list">
+                    				<li>
+                    					<a href="page-recent.html"><i class="icon icon-ren"></i><span class="menu-tit">最近</span></a>
+                    				</li>
+                    			</ul>
+                    		</div>
+                    	</div>
+                    	<!-- 最近e -->
+                    	<!-- 文件s -->
+                    	<div class="menu-item">
+                    		<div class="menu-item-hd">
+                    			<h3 class="tit">文件</h3>
+                    		</div>
+                    		<div class="menu-item-bd">
+                    			<ul class="menu-list">
+                    				<li class="cur">
+                    					<a href="page-home.html"><i class="icon icon-all"></i><span class="menu-tit">全部</span></a>
+                    				</li>
+                    				<li>
+                    					<a href="page-doctype.html"><i class="icon icon-doc"></i><span class="menu-tit">文档</span></a>
+                    				</li>
+                    				<li>
+                    					<a href="page-picture.html"><i class="icon icon-pic"></i><span class="menu-tit">图片</span></a>
+                    				</li>
+                    				<li>
+                    					<a href="page-doctype.html"><i class="icon icon-video"></i><span class="menu-tit">视频</span></a>
+                    				</li>
+                    				<li>
+                    					<a href="page-note.html"><i class="icon icon-note"></i><span class="menu-tit">笔记</span></a>
+                    				</li>
+                    				<li>
+                    					<a href="page-doctype.html"><i class="icon icon-music"></i><span class="menu-tit">音乐</span></a>
+                    				</li>
+                    			</ul>
+                    		</div>
+                    	</div>
+                    	<!-- 文件e -->
+                    	<!-- 照片s -->
+                    	<div class="menu-item">
+                    		<div class="menu-item-hd">
+                    			<h3 class="tit">照片</h3>
+                    		</div>
+                    		<div class="menu-item-bd">
+                    			<ul class="menu-list">
+                    				<li>
+                    					<a href="javascript:void(0)"><i class="icon icon-time"></i><span class="menu-tit">时间</span></a>
+                    				</li>
+                    				<li>
+                    					<a href="javascript:void(0)"><i class="icon icon-location"></i><span class="menu-tit">地点</span></a>
+                    				</li>
+                    				<li>
+                    					<a href="javascript:void(0)"><i class="icon icon-tag"></i><span class="menu-tit">标签</span></a>
+                    				</li>
+                    			</ul>
+                    		</div>
+                    	</div>
+                    	<!-- 照片e -->
+                    	<!-- 我的s -->
+                    	<div class="menu-item">
+                    		<div class="menu-item-hd">
+                    			<h3 class="tit">我的</h3>
+                    		</div>
+                    		<div class="menu-item-bd">
+                    			<ul class="menu-list">
+                    				<li>
+                    					<!-- [ATTENTION!!] 有还木有查看的接收信息时， 添加 .new  -->
+                    					<a class="new" href="page-clipboard.html"><i class="icon icon-clip"></i><span class="menu-tit">剪贴板</span></a>
+                    				</li>
+                    				<li>
+                    					<a href="page-share-links.html"><i class="icon icon-share"></i><span class="menu-tit">分享链接</span></a>
+                    				</li>
+                    				<li>
+                    					<a href="page-trash.html"><i class="icon icon-trash"></i><span class="menu-tit">回收站</span></a>
+                    				</li>
+                    			</ul>
+                    		</div>
+                    	</div>
+                    	<!-- 我的e -->
+
+                    	<div class="menu-item menu-notice">
+                    		<a href="">微云会员调整公告</a>
+                    	</div>
+                    </div>
+                    <!-- 菜单 s -->
+                </div>
+                <!-- layout-aside-bd e -->
+                <!-- layout-aside-ft s -->
+                <div class="layout-aside-ft">
+                    <!-- 帮助 s -->
+                    <div class="mod-txt-list">
+                    	<ul class="txt-list clearfix">
+                    		<li class="txt-item"><a href="javascript:void(0)">版权声明</a>
+                                <!-- 版权声明内容 s -->
+                                <div class="mod-bubble-dropdown with-border bottom-left copyright-bubble-dropdown">
+                                    <div class="txt-dropdown">
+                                        <p>您应尊重相关作品著作权人合法权益，未经著作权人合法授权，不能违法上传、储存、分享他人作品。</p>
+                                    </div>
+                                    <b class="bubble-arrow-border"></b>
+                                    <b class="bubble-arrow"></b>
+                                </div>
+                                <!-- 版权声明内容 e -->
+                            </li>
+                    		<li class="txt-item"><a href="javascript:void(0)">投诉指引</a></li>
+                    	</ul>
+                    </div>
+                    <!-- 帮助 e -->
+                </div>
+                <!-- layout-aside-hd e -->
+            </div>
+            <!-- 左侧栏 e -->
+
+            <!-- 主体内容 s -->
+            <div class="layout-main">
+                <div class="layout-main-bd">
+                    <!-- tab 切换 s -->
+                    <!-- tab 切换 -->
+                    <div class="mod-tab">
+                        <div class="tab-hd">
+                            <ul class="tab-list clearfix">
+                                <!-- [ATTENTION!!] 选中的时候添加 .on -->
+                                <li class="tab-item on" id="js-send-tab">
+                                    <a href="javascript:void(0)" class="btn btn-s">发送</a>
+                                    <b class="spliter"></b>
+                                </li>
+                                <!-- [ATTENTION!!] 有未查看消息是，添加 .new -->
+                                <li class="tab-item new" id="js-receive-tab">
+                                    <a href="javascript:void(0)" class="btn btn-s">接收</a>
+                                    <b class="spliter"></b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-bd">
+                            <!-- [ATTENTION!!] JS 动态计算 -->
+                            <ul class="tab-cont-list">
+                                <li class="tab-cont-item" id="js-sender">
+                                    <div class="editor-wrapper">
+                                        <!-- [ATTENTION!!] JS 动态计算 -->
+                                        <textarea style="height:767px;" class="editor" placeholder="输入或粘贴一段内容，可以发送到自己的手机上（需要安装手机版微云）"></textarea>
+                                    </div>
+                                    <div class="cont-ft clearfix" id="js-send">
+                                        <!-- [ATTENTION!!] disable 状态，添加 .disabled -->
+                                        <a href="" class="btn btn-w disable">清空</a>
+                                        <a href="" class="btn btn-l disable">发送</a>
+                                        <!-- <a href="" class="btn btn-l sending">发送中</a> -->
+                                    </div>
+                                </li>
+                                <!-- [ATTENTION!!] JS 动态计算高度 -->
+                                <!-- [ATTENTION!!] 进入某一条接收的信息时，添加 .show-exp -->
+                                <li class="tab-cont-item has-inner-cont" id="js-receiver" style="height: 767px;">
+                                    <div class="inner-cont-wrapper">
+                                        <!-- 接收列表 s -->
+                                        <ul class="inner-cont-list">
+                                            <li class="inner-cont-item" id="js-goexp"><div class="text">text1</div></li>
+                                            <li class="inner-cont-item" id="js-goblank"><div class="text">[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！[ATTENTION!!] ！！点这个出没有接收内容状态！！</div></li>
+                                            <li class="inner-cont-item"><div class="text">text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3text3</div></li>
+                                        </ul>
+                                        <!-- 接收列表 e -->
+                                        <!-- 接收内容 s -->
+                                        <div class="inner-cont-exp">
+                                            <div class="exp-hd mod-act-list">
+                                                <a href="" class="act-list"><i class="icon icon-goback"></i>返回</a>
+                                                <div class="btn-group">
+                                                    <a href="" class="btn btn-w">复制</a>
+                                                    <a href="" class="btn btn-w">删除</a>
+                                                </div>
+                                            </div>
+                                            <!-- [ATTENTION!!] JS 动态计算高度 -->
+                                            <div class="exp-bd" style="height:700px;">
+                                                dddddddd
+                                            </div>
+                                        </div>
+                                        <!-- 接收内容 e -->
+                                    </div>
+
+                                    <!-- 空状态：没有接收内容 s -->
+                                    <!-- 空状态 s -->
+                                    <div class="mod-status">
+                                      <div class="page-loading-box" style="display:none;">
+                                        <!-- 页面 loading -->
+                                        <div class="load-more">
+                                          <i class="icon-page-loading">正在加载</i>
+                                        </div>
+                                      </div>
+                                      <div class="page-loading-search">
+                                        <!-- 页面 loading -->
+                                        <div class="load-more">
+                                          <i class="icon-page-loading-search"></i>
+                                          <p class="txt">正在搜索...</p>
+                                        </div>
+                                      </div>
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- 目录为空 -->
+                                        <div class="status-inner" id="js-nofile" style="">
+                                          <i class="icon icon-nofile"></i>
+                                          <h2 class="title">暂无文件</h2>
+                                          <p class="txt">请点击左上角的“上传”按钮添加</p>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- 任务为空 -->
+                                        <div class="status-inner" id="js-nofile" style="">
+                                          <i class="icon icon-nofile"></i>
+                                          <h2 class="title">没有任务</h2>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- 最近为空 -->
+                                        <div class="status-inner" id="js-norecent" style="">
+                                          <i class="icon icon-norecent"></i>
+                                          <h2 class="title">最近为空</h2>
+                                          <p class="txt">您最近还没有操作过任何文件哦~</p>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- 笔记为空 -->
+                                        <div class="status-inner" id="js-nonote" style="">
+                                          <i class="icon icon-nonote"></i>
+                                          <h2 class="title">暂无笔记</h2>
+                                          <p class="txt">您可以通过“新建笔记”进行添加</p>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- 文档为空 -->
+                                        <div class="status-inner" id="js-notxt" style="">
+                                          <i class="icon icon-notxt"></i>
+                                          <h2 class="title">暂无文档</h2>
+                                          <p class="txt">请点击左上方的“上传”按钮添加</p>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;" id="js-clipboard"> 
+                                        <!-- 剪贴板无内容 -->
+                                        <div class="status-inner" id="js-noclipboard" style="">
+                                          <i class="icon icon-nocont"></i>
+                                          <h2 class="title">剪贴板无内容</h2>
+                                          <p class="txt">安装微云手机版，使用“剪贴板”功能可以将文字发送到这里</p>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- 文档为空 -->
+                                        <div class="status-inner" id="js-nopicture" style="">
+                                          <i class="icon icon-nopicture"></i>
+                                          <h2 class="title">暂无图片</h2>
+                                          <p class="txt">请点击左上方的“上传”按钮添加</p>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- 分享链接为空 -->
+                                        <div class="status-inner" id="js-noshare" style="">
+                                          <i class="icon icon-noshare"></i>
+                                          <p class="txt">快把你的文件分享给好友吧！</p>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- 音乐为空 -->
+                                        <div class="status-inner" id="js-nomusic" style="">
+                                          <i class="icon icon-nomusic"></i>
+                                          <h2 class="title">暂无音乐</h2>
+                                          <p class="txt">请点击左上方的“上传”按钮添加</p>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- 回收站为空 -->
+                                        <div class="status-inner" id="js-notrash" style="">
+                                          <i class="icon icon-notrash"></i>
+                                          <h2 class="title">回收站为空</h2>
+                                          <p class="txt">您可以在这里找回最近15天删除的文件</p>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- 视频为空 -->
+                                        <div class="status-inner" id="js-novideo" style="">
+                                          <i class="icon icon-novideo"></i>
+                                          <h2 class="title">暂无视频</h2>
+                                          <p class="txt">请点击左上角的“上传”按钮添加</p>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- 搜索不到关键字 -->
+                                        <div class="status-inner" id="js-nosearch" style="">
+                                          <i class="icon icon-nosearch"></i>
+                                          <p class="txt">抱歉，未找到匹配文件</p>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- 全部 -->
+                                        <div class="status-inner" id="js-all" style="">
+                                          <i class="icon icon-all"></i>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- qq离线文件 -->
+                                        <div class="status-inner" id="js-qqoffline-file" style="">
+                                          <i class="icon icon-qqoffline-file"></i>
+                                        </div>
+                                      </div>
+
+                                      <div class="empty-box" style="display:none;">
+                                        <!-- 敏感信息 -->
+                                        <div class="status-inner" style="">
+                                          <i class="icon icon-sensitive"></i>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <!-- 空状态：没有接收内容 e -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- tab 切换 e -->
+                </div>
+            </div>
+            <!-- 主体内容 e -->
+        </div>
+    </div>
+    <!-- 主体 e -->
+</div>
+<!-- wrapper e -->
+
+	<!-- 演示脚本，前台GG请删除 S -->
+	<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qz-act/js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="../../js/wy.js"></script>
+    <script type="text/javascript" src="../../js/bubble.js"></script>
+  <script type="text/javascript" src="../../js/clipboard.js"></script>
+  <script type="text/javascript" src="../../js/task-ctrl.js"></script>
+	<script type="text/javascript" src="../../js/msg.js"></script>
+	<!-- <script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script> -->
+	<!-- 演示脚本，前台GG请删除 E -->
+</body>
+</html>

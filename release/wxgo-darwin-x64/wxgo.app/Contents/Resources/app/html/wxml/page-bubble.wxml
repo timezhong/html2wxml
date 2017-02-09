@@ -1,0 +1,1361 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>微云网页版-气泡弹出层</title>
+	<meta name="keywords" content="QQ, 腾讯,微云, 分享, 网盘, 网络硬盘, U盘, 云存储, 传输, 存储, 同步, 备份, 拍照, 上传, 下载, 中转, 文件, 照片, 相册, 离线, 传文件, wifi, cloud, 微云网页版, weiyun, weiyun web">  
+	<meta name="description" content="微云是腾讯公司为用户精心打造的一项智能云服务, 您可以通过微云方便地在手机和电脑之间同步文件、推送照片和传输数据。">
+	<viewnk rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+	<viewnk rel="stylesheet" href="../../css/page-home.css">
+	<viewnk rel="stylesheet" href="../../css/page-home-delay.css">
+	<viewnk rel="stylesheet" href="">
+	<viewnk rel="dns-prefetch" href="//qzonestyle.gtimg.cn">
+</head>
+<view class="page-bubble">
+<!-- wrapper s -->
+<view class="layout-wrapper">
+<!-- 头部 S -->
+<view class="layout-header">
+    <view class="layout-header-inner">
+        <!-- 顶部导航 s -->
+        <view class="mod-nav clearfix">
+            <view class="logo">
+                <viewigator href="#" title="腾讯微云">腾讯微云</navigator>
+            </view>
+
+            <!-- 传输面板 s -->
+            <view class="mod-act">   
+                <viewigator class="act-link" href="#" title="文件管理"><i class="icon icon-act"></i></navigator>
+            </view>
+            <!-- 传输面板 e -->
+            <!--搜索 s -->
+            <view class="mod-search"><!--获得焦点状态添加类名focus -->
+                <i class="icon icon-search"></i>
+                <input class="mod-input" type="text" value="输入文件名" aria-label="输入文件名并按下回车进行搜索" tabindex="0">
+                <viewigator class="close" href="javascript:void(0)" aria-label="关闭搜索界面" hidefocus="on"><i class="icon icon-close"></i></navigator>
+            </view>      
+            <!--搜索 e -->    
+            <!-- 视图模式 s -->
+            <view class="mod-view">
+                <view class="view-item-list clearfix">
+                    <view class="view-item clearfix">
+                        <viewigator class="item-list cur" href="#" title="列表视图">
+                            <i class="icon icon-list"></i>
+                        </navigator>
+                        <viewigator class="item-list" href="#" title="缩略图视图">
+                            <i class="icon icon-thum"></i>
+                        </navigator>
+                    </view>
+                    <view class="view-item clearfix">
+                        <viewigator class="item-list" href="#" title="按时间排序">
+                            <i class="icon icon-ren"></i>
+                        </navigator>
+                        <viewigator class="item-list cur" href="#" title="按字母排序">
+                            <i class="icon icon-letter"></i>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+            <!-- 视图模式 e -->
+            <!-- 添加 s -->
+            <view class="mod-upload">
+                <viewigator class="btn btn-l btn-upload" href="#"><i class="icon icon-add"></i><text class="btn-txt">添加</text></navigator>
+                <!-- 添加内容 s -->
+                <view class="mod-bubble-dropdown with-border top-right upload-bubble-dropdown">
+                    <view class="upload-dropdown clearfix">
+                        <view class="upload-item">
+                            <view class="inner">
+                                <b class="icon icon-upload icon-upload-file"></b>
+                                <view class="txt">上传文件</view>
+                            </view>
+                        </view>
+                        <view class="upload-item">
+                            <view class="inner">
+                                <b class="icon icon-upload icon-upload-dir"></b>
+                                <view class="txt">上传文件夹</view>
+                            </view>
+                        </view>
+                        <view class="upload-item">
+                            <view class="inner">
+                                <b class="icon icon-upload icon-create-dir"></b>
+                                <view class="txt">创建文件夹</view>
+                            </view>
+                        </view>
+                        <view class="upload-item">
+                            <view class="inner">
+                                <b class="icon icon-upload icon-add-note"></b>
+                                <view class="txt">添加笔记</view>
+                            </view>
+                        </view>
+                    </view>
+                    <b class="bubble-arrow-border"></b>
+                    <b class="bubble-arrow"></b>
+                </view>
+                <!-- 添加内容 e -->
+            </view>
+            <!-- 添加 e -->
+        </view>
+        <!-- 顶部导航 e -->
+    </view>
+</view>
+<!-- 头部 E -->
+<!-- 主体 S -->
+<view class="layout-body">
+    <view class="layout-body-inner">
+        <!-- 左侧栏 s -->
+        <view class="layout-aside">
+            <!-- layout-aside-hd s -->
+            <view class="layout-aside-hd">
+                <!-- 用户头像 s -->
+                <view class="mod-user mod-user-vip"><!-- vip用户加类名 mod-user-vip,vip过期用户加类名 mod-user-vip-expire-->
+                    <view class="user-avatar">
+                        <viewigator class="user-avatar-pic" href="#">
+                            <img src="../img/temp/avatar.jpg" alt="用户昵称">
+                            <i class="icon icon-vip" title="VIP会员"></i>
+                        </navigator>
+                    </view>
+                    <!-- 用户信息 s -->
+                    <view class="mod-bubble-dropdown acct-bubble-dropdown" style="display:block;">
+                        <view class="acct-dropdown">
+                            <view class="acct-info">
+                                <!-- <b class="acct-info-bg" style="background-image:url(http://qzonestyle.gtimg.cn/aoi/sola/20141222185945_O20XHGAoR2.jpg)"></b> -->
+                                <view class="name-container clearfix">
+                                    <text class="name">进击的马里奥</text>
+                                    <viewigator class="btn" href="javascript:void(0);" title="退出登录"><i class="icon icon-logout"></i></navigator>
+                                    <!-- <button type="submit" class="btn btn-icon">退出登录</button> -->
+                                </view>
+                                <view class="space-container">
+                                    <view class="txt">已使用:14112.12GB    总容量:14112.12GB</view>
+                                    <view class="quota-graph-container"> 
+                                        <view class="quota-graph"></view>
+                                        <view class="quota-graph-bar"></view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="with-border">
+                                <!-- [ATTENTIN!!] 没有会员添加 .fail -->
+                                <view class="main acct-item">
+                                    <text class="txt">会员2017-06-12到期</text>
+                                    <!-- [ATTENTION!!] 文案：开通/续费 -->
+                                    <viewigator href="#" class="btn btn-m btn-vip"><i class="icon icon-vip-btn"></i>续费</navigator>
+                                </view>
+                                <view class="acct-item"><text class="txt">开启独立密码</text></view>
+                                <view class="acct-item"><text class="txt">帮助与反馈</text></view>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 用户信息 e -->
+                </view>
+                <!-- 用户头像 s -->
+            </view>
+            <!-- layout-aside-hd e -->
+            <!-- layout-aside-bd s -->
+            <view class="layout-aside-bd">
+                <!-- 菜单 s -->
+                <view class="mod-menu">
+                    <!-- 最近s -->
+                    <view class="menu-item">
+                        <view class="menu-item-bd">
+                            <view class="menu-list">
+                                <view>
+                                    <viewigator href="javascript:void(0)"><i class="icon icon-ren"></i><text class="menu-tit">最近</text></navigator>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 最近e -->
+                    <!-- 文件s -->
+                    <view class="menu-item">
+                        <view class="menu-item-hd">
+                            <view class="tit">文件</view>
+                        </view>
+                        <view class="menu-item-bd">
+                            <view class="menu-list">
+                                <view class="cur">
+                                    <viewigator href="javascript:void(0)"><i class="icon icon-all"></i><text class="menu-tit">全部</text></navigator>
+                                </view>
+                                <view>
+                                    <viewigator href="javascript:void(0)"><i class="icon icon-doc"></i><text class="menu-tit">文档</text></navigator>
+                                </view>
+                                <view>
+                                    <viewigator href="javascript:void(0)"><i class="icon icon-pic"></i><text class="menu-tit">图片</text></navigator>
+                                </view>
+                                <view>
+                                    <viewigator href="javascript:void(0)"><i class="icon icon-video"></i><text class="menu-tit">视频</text></navigator>
+                                </view>
+                                <view>
+                                    <viewigator href="javascript:void(0)"><i class="icon icon-note"></i><text class="menu-tit">笔记</text></navigator>
+                                </view>
+                                <view>
+                                    <viewigator href="javascript:void(0)"><i class="icon icon-music"></i><text class="menu-tit">音乐</text></navigator>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 文件e -->
+                    <!-- 照片s -->
+                    <view class="menu-item">
+                        <view class="menu-item-hd">
+                            <view class="tit">照片</view>
+                        </view>
+                        <view class="menu-item-bd">
+                            <view class="menu-list">
+                                <view>
+                                    <viewigator href="javascript:void(0)"><i class="icon icon-time"></i><text class="menu-tit">时间</text></navigator>
+                                </view>
+                                <view>
+                                    <viewigator href="javascript:void(0)"><i class="icon icon-location"></i><text class="menu-tit">地点</text></navigator>
+                                </view>
+                                <view>
+                                    <viewigator href="javascript:void(0)"><i class="icon icon-tag"></i><text class="menu-tit">标签</text></navigator>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 照片e -->
+                    <!-- 我的s -->
+                    <view class="menu-item">
+                        <view class="menu-item-hd">
+                            <view class="tit">我的</view>
+                        </view>
+                        <view class="menu-item-bd">
+                            <view class="menu-list">
+                                <view>
+                                    <viewigator href="javascript:void(0)"><i class="icon icon-clip"></i><text class="menu-tit">剪贴板</text></navigator>
+                                </view>
+                                <view>
+                                    <viewigator href="javascript:void(0)"><i class="icon icon-share"></i><text class="menu-tit">分享链接</text></navigator>
+                                </view>
+                                <view>
+                                    <viewigator href="javascript:void(0)"><i class="icon icon-trash"></i><text class="menu-tit">回收站</text></navigator>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <!-- 我的e -->
+                </view>
+                <!-- 菜单 s -->
+            </view>
+            <!-- layout-aside-bd e -->                  
+            <!-- layout-aside-ft s -->
+            <view class="layout-aside-ft">
+                <!-- 帮助 s -->
+                <view class="mod-txt-list">
+                    <view class="txt-list clearfix">
+                        <view class="txt-item"><viewigator href="javascript:void(0)">版权声明</navigator>
+                            <!-- 版权声明内容 s -->
+                            <view class="mod-bubble-dropdown with-border bottom-left copyright-bubble-dropdown">
+                                <view class="txt-dropdown">
+                                    <view>您应尊重相关作品著作权人合法权益，未经著作权人合法授权，不能违法上传、储存、分享他人作品。</view>
+                                </view>
+                                <b class="bubble-arrow-border"></b>
+                                <b class="bubble-arrow"></b>
+                            </view>
+                            <!-- 版权声明内容 e -->
+                        </view>
+                        <view class="txt-item"><viewigator href="javascript:void(0)">版权声明</navigator></view>
+                    </view>
+                </view>
+                <!-- 帮助 e -->
+            </view>
+            <!-- layout-aside-hd e -->
+        </view>
+        <!-- 左侧栏 e -->
+        <!-- 主要内容 s -->
+        <view class="layout-main">
+            <!-- layout-main-hd s -->
+            <view class="layout-main-hd">
+                <!-- 操作条 s -->
+                <view class="mod-act-panel">
+                    <view class="act-panel-inner cleafix">                               
+                        <view class="mod-check"><i class="icon icon-checkbox"></i></view><!-- 选中态加类名checked -->
+                        <!-- 面包屑导航 s -->
+                        <view class="mod-breadcrumb">
+                            <view class="breadcrumb">
+                                <view>全部</view>
+                            </view>
+                        </view>
+                        <!-- 面包屑导航 e -->
+                    </view>
+                </view>
+                <!-- 操作条 e-->
+            </view>
+            <!-- layout-main-hd e -->
+            <!-- layout-main-bd s -->
+            <view class="layout-main-bd">
+                <!-- 列表 s -->
+                <view class="mod-list-group">
+                    <view class="list-group-bd">
+                        <view class="list-group">
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><i class="icon icon-m icon-file-m"></i></view>
+                                    <view class="info">
+                                        <text class="tit">前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                            <view class="list-group-item">
+                                <view class="item-tit">
+                                    <view class="label"><i class="icon icon-checkbox"></i></view>
+                                    <view class="thumb"><img src="../img/temp/pic.png" alt="文件名称"></view>
+                                    <view class="info">
+                                        <text class="tit ellipsis">前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化</text>
+                                    </view>
+                                </view>
+                                <view class="item-info">
+                                    <text class="item-info-list">
+                                        <text class="mod-act-list">
+                                            <viewigator class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></navigator>
+                                            <viewigator class="act-list" title="下载" href="#"><i class="icon icon-down"></i></navigator>
+                                            <viewigator class="act-list" title="移动" href="#"><i class="icon icon-move"></i></navigator>
+                                            <viewigator class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></navigator>
+                                            <viewigator class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></navigator>
+                                            <viewigator class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></navigator>
+                                        </text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-size">1.5M</text>
+                                    </text>
+                                    <text class="item-info-list">
+                                        <text class="txt txt-time">2015-12-16 20:05</text>
+                                    </span
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <!-- 列表 e -->
+            </view>
+            <!-- layout-main-bd e -->
+        </view>
+        <!-- 主要内容 e -->
+    </view>
+</view>
+<!-- 主体 S -->
+
+<!-- 空白处 右键菜单 S -->
+<view class="mod-bubble-menu with-border" id="js-menu-one">
+    <view>
+        <view class="menu-item">
+            <text class="txt">下载</text>
+        </view>
+        <view class="menu-item">
+            <text class="txt">删除</text>
+        </view>
+        <view class="menu-item">
+            <text class="txt">移动到</text>
+        </view>
+        <view class="menu-item">
+            <text class="txt">重命名</text>
+            <view class="spliter"></view>
+        </view>
+        <view class="menu-item has-icon">
+            <i class="icon icon-code"></i>
+            <text class="txt">获取二维码</text>
+            <view class="spliter"></view>
+        </view>
+        <view class="menu-item has-icon">
+            <i class="icon icon-share"></i>
+            <text class="txt">分享</text>
+        </view>
+    </view>
+</view>
+<!-- 空白处 右键菜单 E -->
+
+<!-- 缩略图上 右键菜单 S -->
+<view class="mod-bubble-menu with-border" id="js-menu-two" style="left: 800px; display:none;">
+    <view>
+        <view class="menu-item">
+            <text class="txt">返回</text>
+        </view>
+        <view class="menu-item">
+            <text class="txt">刷新</text>
+            <view class="spliter"></view>
+        </view>
+        <view class="menu-item has-icon">
+            <i class="icon icon-new-dir"></i>
+            <text class="txt">新建文件夹</text>
+        </view>
+    </view>
+</view>
+<!-- 缩略图上 右键菜单 E -->
+</view>
+<!-- wrapper e -->
+<!-- wrapper e -->
+	<!-- 演示脚本，前台GG请删除 S -->
+	<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qz-act/js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="../../js/wy.js"></script>
+    <script type="text/javascript" src="../../js/bubble.js"></script>
+  <script type="text/javascript" src="../../js/clipboard.js"></script>
+  <script type="text/javascript" src="../../js/task-ctrl.js"></script>
+	<script type="text/javascript" src="../../js/msg.js"></script>
+	<!-- <script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script> -->
+	<!-- 演示脚本，前台GG请删除 E -->
+</view>
+</html>

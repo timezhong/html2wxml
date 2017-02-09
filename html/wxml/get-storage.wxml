@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>1T容量免费领</title>
+  <meta name="keywords" content="QQ, 腾讯,微云, 分享, 网盘, 网络硬盘, U盘, 云存储, 传输, 存储, 同步, 备份, 拍照, 上传, 下载, 中转, 文件, 照片, 相册, 离线, 传文件, wifi, cloud, 微云网页版, weiyun, weiyun web">  
+  <meta name="description" content="微云是腾讯公司为用户精心打造的一项智能云服务, 您可以通过微云方便地在手机和电脑之间同步文件、推送照片和传输数据。">
+  <viewnk rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+  <script type="text/javascript">
+    // html缓存（代价是会自动多刷一次，注意：请直接访问不带参数的URL，如http://xxxxxxx.html）
+    if(!window.location.search) {
+      window.location = window.location.href+'?r='+Math.random();
+    }
+    // css缓存
+    document.write('<viewnk rel="stylesheet" href="../../css/get-storage.css?r='+Math.random()+'">');
+  </script>
+</head>
+<view>
+  <view class="wy-wrapper">
+    <!-- 页面头部 s -->
+    <view class="wy-hd">
+      <view class="wy-hd-inner clearfix">
+        <view class="logo">
+          <viewigator href="#" title="微云">微云</navigator>
+        </view>
+      </view>
+    </view>
+    <!-- 页面头部 e -->
+
+    <!-- 页面内容 s -->
+    <view class="wy-bd">
+      <view class="cont-hd">
+        <!-- 标题 s -->
+        <view class="title">1T容量免费领</view>
+        <!-- 标题 e -->
+
+        <!-- 用户信息 s -->
+        <view class="title-bg">
+          <view class="user-wrapper">
+            <img src="http://qzonestyle.gtimg.cn/aoi/sola/20151130112348_mNOoJ4weaY.png" alt="用户头像" class="avatar">
+            <view class="name">疯狂的橘子</view>
+            <view class="storage">56.8GB/3072GB</view>
+          </view>
+        </view>
+        <!-- 用户信息 e -->
+      </view>
+
+      <view class="cont-bd">
+        <view class="cont-bd-inner">
+          <view class="cont-list">
+            <!-- [ATTENTION!!] 已经领取，添加 .disabled -->
+            <view class="item disabled">
+              <view class="tag">福利一</view>
+              <view class="cont">
+                <view class="storage">500G</view>
+                <view class="item-exp">
+                  <view class="txt">登录微云手机客户端</view>
+                  <!-- 已经领取过的文案：已领取xxxG -->
+                  <view class="sub-txt"><i class="icon icon-get"></i>立即获得500G</view>
+                  <view class="link-txt"><button class="btn-link">立即下载</button></view>
+                </view>
+              </view>
+            </view>
+            <view class="item">
+              <view class="tag">福利二</view>
+              <view class="cont">
+                <view class="storage">300G</view>
+                <view class="item-exp">
+                  <view class="txt">用微云手机客户端分享</view>
+                  <view class="sub-txt"><i class="icon icon-get"></i>立即获得300G</view>
+                </view>
+              </view>
+            </view>
+            <view class="item">
+              <view class="tag">福利三</view>
+              <view class="cont">
+                <view class="storage">200G</view>
+                <view class="item-exp">
+                  <view class="txt">登录微云电脑客户端</view>
+                  <view class="sub-txt"><i class="icon icon-get"></i>立即获得200G</view>
+                  <view class="link-txt"><button class="btn-link">立即下载</button></view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view class="act-exp">
+            <view class="title">活动说明</view>
+            <view class="exp-list">
+              <view class="item">
+                <view class="txt">每个账号最高可领取1000G免费容量，领完即止，不可重复领取。</view>
+              </view>
+              <view class="item">
+                <view class="txt">本活动仅限新注册用户参加，老用户不可参加。</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 页面内容 e -->
+  </view>
+
+  <!-- 页脚 s -->
+  <view class="wy-footer">
+    <view class="footer-cont">
+      <view class="friend-href">
+        <view class="friend-sec">
+            <viewigator class="friend-link" href="http://z.qzone.com/" title="QQ空间"><i class="icon icon-qzone"></i>QQ空间</navigator>
+            <viewigator class="friend-link" href="http://y.qq.com/" title="QQ音乐"><i class="icon icon-music"></i>QQ音乐</navigator>
+            <viewigator class="friend-link" href="http://mtv.qq.com/" title="企鹅MV"><i class="icon icon-mv"></i>企鹅MV</navigator>
+            <viewigator class="friend-link" href="http://fm.qq.com/" title="企鹅FM"><i class="icon icon-fm"></i>企鹅FM</navigator>
+            <viewigator class="friend-link" href="https://ke.qq.com/" title="腾讯课堂"><i class="icon icon-course"></i>腾讯课堂</navigator>
+        </view>
+        <view class="friend-sec">
+            <viewigator class="friend-link" href="https://www.qcloud.com/" title="腾讯云"><i class="icon icon-qcloud"></i>腾讯云</navigator>
+            <viewigator class="friend-link" href="http://qidian.qq.com/" title="腾讯企点"><i class="icon icon-qidian"></i>腾讯企点</navigator>
+        </view>
+      </view>
+      <view class="copyright">
+        <view><viewigator href="http://www.tencent.com/" target="_blank">关于腾讯</navigator> | <viewigator href="http://www.weiyun.com/other/xy.html" target="_blank">服务条款</navigator> | <viewigator href="http://kf.qq.com/" target="_blank">客服中心</navigator> | 粤B2-20090059-86号</view>
+        <view>版权声明：您应尊重相关作品著作权人合法权益，未经著作权人合法授权，不能违法上传、存储、分享他人作品</view>
+        <view><viewigator href="＃" target="_blank">侵权投诉指引</navigator> |  举报或投诉：<viewigator class="email" href="mailto:notice-b2@tencent.com">notice-b2@tencent.com</navigator></view>
+        <view>Copyright © 1998 - 2016 Tencent. All Rights Reserved. 腾讯公司 版权所有</view>
+      </view>
+    </view>
+  </view>
+  <!-- 页脚 e -->
+</view>
+</html>

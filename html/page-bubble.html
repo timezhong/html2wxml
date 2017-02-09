@@ -1,0 +1,1361 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>微云网页版-气泡弹出层</title>
+	<meta name="keywords" content="QQ, 腾讯,微云, 分享, 网盘, 网络硬盘, U盘, 云存储, 传输, 存储, 同步, 备份, 拍照, 上传, 下载, 中转, 文件, 照片, 相册, 离线, 传文件, wifi, cloud, 微云网页版, weiyun, weiyun web">  
+	<meta name="description" content="微云是腾讯公司为用户精心打造的一项智能云服务, 您可以通过微云方便地在手机和电脑之间同步文件、推送照片和传输数据。">
+	<link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../../css/page-home.css">
+	<link rel="stylesheet" href="../../css/page-home-delay.css">
+	<link rel="stylesheet" href="">
+	<link rel="dns-prefetch" href="//qzonestyle.gtimg.cn">
+</head>
+<body class="page-bubble">
+<!-- wrapper s -->
+<div class="layout-wrapper">
+<!-- 头部 S -->
+<div class="layout-header">
+    <div class="layout-header-inner">
+        <!-- 顶部导航 s -->
+        <div class="mod-nav clearfix">
+            <div class="logo">
+                <a href="#" title="腾讯微云">腾讯微云</a>
+            </div>
+
+            <!-- 传输面板 s -->
+            <div class="mod-act">   
+                <a class="act-link" href="#" title="文件管理"><i class="icon icon-act"></i></a>
+            </div>
+            <!-- 传输面板 e -->
+            <!--搜索 s -->
+            <div class="mod-search"><!--获得焦点状态添加类名focus -->
+                <i class="icon icon-search"></i>
+                <input class="mod-input" type="text" value="输入文件名" aria-label="输入文件名并按下回车进行搜索" tabindex="0">
+                <a class="close" href="javascript:void(0)" aria-label="关闭搜索界面" hidefocus="on"><i class="icon icon-close"></i></a>
+            </div>      
+            <!--搜索 e -->    
+            <!-- 视图模式 s -->
+            <div class="mod-view">
+                <div class="view-item-list clearfix">
+                    <div class="view-item clearfix">
+                        <a class="item-list cur" href="#" title="列表视图">
+                            <i class="icon icon-list"></i>
+                        </a>
+                        <a class="item-list" href="#" title="缩略图视图">
+                            <i class="icon icon-thum"></i>
+                        </a>
+                    </div>
+                    <div class="view-item clearfix">
+                        <a class="item-list" href="#" title="按时间排序">
+                            <i class="icon icon-ren"></i>
+                        </a>
+                        <a class="item-list cur" href="#" title="按字母排序">
+                            <i class="icon icon-letter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- 视图模式 e -->
+            <!-- 添加 s -->
+            <div class="mod-upload">
+                <a class="btn btn-l btn-upload" href="#"><i class="icon icon-add"></i><span class="btn-txt">添加</span></a>
+                <!-- 添加内容 s -->
+                <div class="mod-bubble-dropdown with-border top-right upload-bubble-dropdown">
+                    <ul class="upload-dropdown clearfix">
+                        <li class="upload-item">
+                            <div class="inner">
+                                <b class="icon icon-upload icon-upload-file"></b>
+                                <p class="txt">上传文件</p>
+                            </div>
+                        </li>
+                        <li class="upload-item">
+                            <div class="inner">
+                                <b class="icon icon-upload icon-upload-dir"></b>
+                                <p class="txt">上传文件夹</p>
+                            </div>
+                        </li>
+                        <li class="upload-item">
+                            <div class="inner">
+                                <b class="icon icon-upload icon-create-dir"></b>
+                                <p class="txt">创建文件夹</p>
+                            </div>
+                        </li>
+                        <li class="upload-item">
+                            <div class="inner">
+                                <b class="icon icon-upload icon-add-note"></b>
+                                <p class="txt">添加笔记</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <b class="bubble-arrow-border"></b>
+                    <b class="bubble-arrow"></b>
+                </div>
+                <!-- 添加内容 e -->
+            </div>
+            <!-- 添加 e -->
+        </div>
+        <!-- 顶部导航 e -->
+    </div>
+</div>
+<!-- 头部 E -->
+<!-- 主体 S -->
+<div class="layout-body">
+    <div class="layout-body-inner">
+        <!-- 左侧栏 s -->
+        <div class="layout-aside">
+            <!-- layout-aside-hd s -->
+            <div class="layout-aside-hd">
+                <!-- 用户头像 s -->
+                <div class="mod-user mod-user-vip"><!-- vip用户加类名 mod-user-vip,vip过期用户加类名 mod-user-vip-expire-->
+                    <div class="user-avatar">
+                        <a class="user-avatar-pic" href="#">
+                            <img src="../img/temp/avatar.jpg" alt="用户昵称">
+                            <i class="icon icon-vip" title="VIP会员"></i>
+                        </a>
+                    </div>
+                    <!-- 用户信息 s -->
+                    <div class="mod-bubble-dropdown acct-bubble-dropdown" style="display:block;">
+                        <div class="acct-dropdown">
+                            <div class="acct-info">
+                                <!-- <b class="acct-info-bg" style="background-image:url(http://qzonestyle.gtimg.cn/aoi/sola/20141222185945_O20XHGAoR2.jpg)"></b> -->
+                                <div class="name-container clearfix">
+                                    <span class="name">进击的马里奥</span>
+                                    <a class="btn" href="javascript:void(0);" title="退出登录"><i class="icon icon-logout"></i></a>
+                                    <!-- <button type="submit" class="btn btn-icon">退出登录</button> -->
+                                </div>
+                                <div class="space-container">
+                                    <p class="txt">已使用:14112.12GB    总容量:14112.12GB</p>
+                                    <div class="quota-graph-container"> 
+                                        <div class="quota-graph"></div>
+                                        <div class="quota-graph-bar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="with-border">
+                                <!-- [ATTENTIN!!] 没有会员添加 .fail -->
+                                <li class="main acct-item">
+                                    <span class="txt">会员2017-06-12到期</span>
+                                    <!-- [ATTENTION!!] 文案：开通/续费 -->
+                                    <a href="#" class="btn btn-m btn-vip"><i class="icon icon-vip-btn"></i>续费</a>
+                                </li>
+                                <li class="acct-item"><span class="txt">开启独立密码</span></li>
+                                <li class="acct-item"><span class="txt">帮助与反馈</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 用户信息 e -->
+                </div>
+                <!-- 用户头像 s -->
+            </div>
+            <!-- layout-aside-hd e -->
+            <!-- layout-aside-bd s -->
+            <div class="layout-aside-bd">
+                <!-- 菜单 s -->
+                <div class="mod-menu">
+                    <!-- 最近s -->
+                    <div class="menu-item">
+                        <div class="menu-item-bd">
+                            <ul class="menu-list">
+                                <li>
+                                    <a href="javascript:void(0)"><i class="icon icon-ren"></i><span class="menu-tit">最近</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 最近e -->
+                    <!-- 文件s -->
+                    <div class="menu-item">
+                        <div class="menu-item-hd">
+                            <h3 class="tit">文件</h3>
+                        </div>
+                        <div class="menu-item-bd">
+                            <ul class="menu-list">
+                                <li class="cur">
+                                    <a href="javascript:void(0)"><i class="icon icon-all"></i><span class="menu-tit">全部</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="icon icon-doc"></i><span class="menu-tit">文档</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="icon icon-pic"></i><span class="menu-tit">图片</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="icon icon-video"></i><span class="menu-tit">视频</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="icon icon-note"></i><span class="menu-tit">笔记</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="icon icon-music"></i><span class="menu-tit">音乐</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 文件e -->
+                    <!-- 照片s -->
+                    <div class="menu-item">
+                        <div class="menu-item-hd">
+                            <h3 class="tit">照片</h3>
+                        </div>
+                        <div class="menu-item-bd">
+                            <ul class="menu-list">
+                                <li>
+                                    <a href="javascript:void(0)"><i class="icon icon-time"></i><span class="menu-tit">时间</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="icon icon-location"></i><span class="menu-tit">地点</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="icon icon-tag"></i><span class="menu-tit">标签</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 照片e -->
+                    <!-- 我的s -->
+                    <div class="menu-item">
+                        <div class="menu-item-hd">
+                            <h3 class="tit">我的</h3>
+                        </div>
+                        <div class="menu-item-bd">
+                            <ul class="menu-list">
+                                <li>
+                                    <a href="javascript:void(0)"><i class="icon icon-clip"></i><span class="menu-tit">剪贴板</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="icon icon-share"></i><span class="menu-tit">分享链接</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="icon icon-trash"></i><span class="menu-tit">回收站</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 我的e -->
+                </div>
+                <!-- 菜单 s -->
+            </div>
+            <!-- layout-aside-bd e -->                  
+            <!-- layout-aside-ft s -->
+            <div class="layout-aside-ft">
+                <!-- 帮助 s -->
+                <div class="mod-txt-list">
+                    <ul class="txt-list clearfix">
+                        <li class="txt-item"><a href="javascript:void(0)">版权声明</a>
+                            <!-- 版权声明内容 s -->
+                            <div class="mod-bubble-dropdown with-border bottom-left copyright-bubble-dropdown">
+                                <div class="txt-dropdown">
+                                    <p>您应尊重相关作品著作权人合法权益，未经著作权人合法授权，不能违法上传、储存、分享他人作品。</p>
+                                </div>
+                                <b class="bubble-arrow-border"></b>
+                                <b class="bubble-arrow"></b>
+                            </div>
+                            <!-- 版权声明内容 e -->
+                        </li>
+                        <li class="txt-item"><a href="javascript:void(0)">版权声明</a></li>
+                    </ul>
+                </div>
+                <!-- 帮助 e -->
+            </div>
+            <!-- layout-aside-hd e -->
+        </div>
+        <!-- 左侧栏 e -->
+        <!-- 主要内容 s -->
+        <div class="layout-main">
+            <!-- layout-main-hd s -->
+            <div class="layout-main-hd">
+                <!-- 操作条 s -->
+                <div class="mod-act-panel">
+                    <div class="act-panel-inner cleafix">                               
+                        <div class="mod-check"><i class="icon icon-checkbox"></i></div><!-- 选中态加类名checked -->
+                        <!-- 面包屑导航 s -->
+                        <div class="mod-breadcrumb">
+                            <ul class="breadcrumb">
+                                <li>全部</li>
+                            </ul>
+                        </div>
+                        <!-- 面包屑导航 e -->
+                    </div>
+                </div>
+                <!-- 操作条 e-->
+            </div>
+            <!-- layout-main-hd e -->
+            <!-- layout-main-bd s -->
+            <div class="layout-main-bd">
+                <!-- 列表 s -->
+                <div class="mod-list-group">
+                    <div class="list-group-bd">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+                                    <div class="info">
+                                        <span class="tit">前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="item-tit">
+                                    <div class="label"><i class="icon icon-checkbox"></i></div>
+                                    <div class="thumb"><img src="../img/temp/pic.png" alt="文件名称"></div>
+                                    <div class="info">
+                                        <span class="tit ellipsis">前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化</span>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <span class="item-info-list">
+                                        <span class="mod-act-list">
+                                            <a class="act-list" title="分享链接" href="#"><i class="icon icon-link"></i></a>
+                                            <a class="act-list" title="下载" href="#"><i class="icon icon-down"></i></a>
+                                            <a class="act-list" title="移动" href="#"><i class="icon icon-move"></i></a>
+                                            <a class="act-list" title="删除" href="#"><i class="icon icon-trash"></i></a>
+                                            <a class="act-list" title="重命名" href="#"><i class="icon icon-rename"></i></a>
+                                            <a class="act-list" title="二维码" href="#"><i class="icon icon-code"></i></a>
+                                        </span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-size">1.5M</span>
+                                    </span>
+                                    <span class="item-info-list">
+                                        <span class="txt txt-time">2015-12-16 20:05</span>
+                                    </span
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 列表 e -->
+            </div>
+            <!-- layout-main-bd e -->
+        </div>
+        <!-- 主要内容 e -->
+    </div>
+</div>
+<!-- 主体 S -->
+
+<!-- 空白处 右键菜单 S -->
+<div class="mod-bubble-menu with-border" id="js-menu-one">
+    <ul>
+        <li class="menu-item">
+            <span class="txt">下载</span>
+        </li>
+        <li class="menu-item">
+            <span class="txt">删除</span>
+        </li>
+        <li class="menu-item">
+            <span class="txt">移动到</span>
+        </li>
+        <li class="menu-item">
+            <span class="txt">重命名</span>
+            <div class="spliter"></div>
+        </li>
+        <li class="menu-item has-icon">
+            <i class="icon icon-code"></i>
+            <span class="txt">获取二维码</span>
+            <div class="spliter"></div>
+        </li>
+        <li class="menu-item has-icon">
+            <i class="icon icon-share"></i>
+            <span class="txt">分享</span>
+        </li>
+    </ul>
+</div>
+<!-- 空白处 右键菜单 E -->
+
+<!-- 缩略图上 右键菜单 S -->
+<div class="mod-bubble-menu with-border" id="js-menu-two" style="left: 800px; display:none;">
+    <ul>
+        <li class="menu-item">
+            <span class="txt">返回</span>
+        </li>
+        <li class="menu-item">
+            <span class="txt">刷新</span>
+            <div class="spliter"></div>
+        </li>
+        <li class="menu-item has-icon">
+            <i class="icon icon-new-dir"></i>
+            <span class="txt">新建文件夹</span>
+        </li>
+    </ul>
+</div>
+<!-- 缩略图上 右键菜单 E -->
+</div>
+<!-- wrapper e -->
+<!-- wrapper e -->
+	<!-- 演示脚本，前台GG请删除 S -->
+	<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qz-act/js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="../../js/wy.js"></script>
+    <script type="text/javascript" src="../../js/bubble.js"></script>
+  <script type="text/javascript" src="../../js/clipboard.js"></script>
+  <script type="text/javascript" src="../../js/task-ctrl.js"></script>
+	<script type="text/javascript" src="../../js/msg.js"></script>
+	<!-- <script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script> -->
+	<!-- 演示脚本，前台GG请删除 E -->
+</body>
+</html>

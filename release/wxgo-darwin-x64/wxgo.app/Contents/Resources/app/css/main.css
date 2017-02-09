@@ -1,0 +1,43 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, figure {
+    margin: 0;
+    padding: 0;
+}
+
+body, input, textarea, select, button {
+    font-family: punctuation,"PingFangSC-Regular","Microsoft Yahei","sans-serif";
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+body{
+
+
+background-color:#f1f1f1; /* fallback for old browsers */
+     
+}
+
+#dropTarget{
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      right: 5px;
+      bottom: 5px;
+      border: 2px dashed #777;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      text-align: center;
+      font-size:18px;
+      color: #777;
+      line-height: 100%;
+      font-weight: normal;
+}
+
+#dropTarget p{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      text-align: center;
+      margin: -10px 0 0;
+}
+
