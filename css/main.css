@@ -7,12 +7,15 @@ body, input, textarea, select, button {
     font-family: punctuation,"PingFangSC-Regular","Microsoft Yahei","sans-serif";
     -webkit-font-smoothing: subpixel-antialiased;
 }
-
+html,body{
+  height: 100%;
+}
 body{
-
-
-background-color:#f1f1f1; /* fallback for old browsers */
-     
+background-image:url("../img/bg.jpg");
+background-size: cover;
+background-position: center;
+background-color:#f1f1f1; /* fallback for old browsers */ 
+background-repeat: no-repeat;
 }
 
 #dropTarget{
@@ -21,13 +24,13 @@ background-color:#f1f1f1; /* fallback for old browsers */
       top: 5px;
       right: 5px;
       bottom: 5px;
-      border: 2px dashed #777;
+      border: 1px dashed #DBD8D8;
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px;
       border-radius: 5px;
       text-align: center;
       font-size:18px;
-      color: #777;
+      color: #DBD8D8;
       line-height: 100%;
       font-weight: normal;
 }

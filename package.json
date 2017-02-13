@@ -5,11 +5,11 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "appdmg": "appdmg appdmg.json wxgo-1.0.dmg",
+    "appdmg": "appdmg appdmg.json html2wxml-1.0.dmg",
     "build-all": "electron-packager . --all --overwrite",
-    "build-mac": "electron-packager ./ wxgo --platform=darwin --arch=x64 --icon=./img/wxgo.icns --overwrite --out ./release ",
-    "build-win64": "electron-packager ./ wxgo --platform=win32 --arch=x64 --icon=./img/wxgo.ico --overwrite --out ./release",
-    "build-win32": "electron-packager ./ wxgo --platform=win32 --arch=ia32 --icon=./img/wxgo.ico --overwrite --out ./release"
+    "build-mac": "electron-packager ./ html2wxml --platform=darwin --arch=x64 --icon=./img/icon.icns --overwrite --out ./release ",
+    "build-win64": "electron-packager ./ html2wxml --platform=win32 --arch=x64 --icon=./img/icon.ico --overwrite --out ./release",
+    "build-win32": "electron-packager ./ html2wxml --platform=win32 --arch=ia32 --icon=./img/icon.ico --overwrite --out ./release"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [

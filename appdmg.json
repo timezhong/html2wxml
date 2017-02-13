@@ -1,10 +1,10 @@
 {
-  "title": "wxgo",
-  "icon": "./img/wxgo.icns",
-  "background": "./img/wxgo.png",
+  "title": "html2wxml",
+  "icon": "./img/icon.icns",
+  "background": "./img/dmg.png",
   "icon-size" : 120,
   "contents": [
     { "x": 485, "y": 300, "type": "link", "path": "/Applications" },
-    { "x": 185, "y": 300, "type": "file", "path": "./release/wxgo-darwin-x64/wxgo.app" }
+    { "x": 185, "y": 300, "type": "file", "path": "./release/html2wxml-darwin-x64/html2wxml.app" }
   ]
 }
