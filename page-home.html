@@ -1,0 +1,1469 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>微云网页版－主面板－列表视图</title>
+	<meta name="keywords" content="QQ, 腾讯,微云, 分享, 网盘, 网络硬盘, U盘, 云存储, 传输, 存储, 同步, 备份, 拍照, 上传, 下载, 中转, 文件, 照片, 相册, 离线, 传文件, wifi, cloud, 微云网页版, weiyun, weiyun web">  
+	<meta name="description" content="微云是腾讯公司为用户精心打造的一项智能云服务, 您可以通过微云方便地在手机和电脑之间同步文件、推送照片和传输数据。">
+	<link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../../css/page-home.css">
+	<link rel="stylesheet" href="../../css/page-home-delay.css">
+	<link rel="stylesheet" href="">
+	<link rel="dns-prefetch" href="//qzonestyle.gtimg.cn">
+</head>
+<body class="page-home">
+<s></s>
+<b></b>
+<i></i>
+<img src="">
+<span></span>
+<script type="text/javascript"></script>
+<!-- wrapper s -->
+<div class="layout-wrapper">
+	<!-- 头部 S -->
+	<div class="layout-header">
+		<div class="layout-header-inner">
+			<!-- 顶部导航 s -->
+			<div class="mod-nav clearfix">
+                <!-- 导航栏编辑态才有，操作按钮 -->
+                <div class="logo">
+                  <a href="#" title="腾讯微云">腾讯微云</a>
+                </div>
+                <!-- 传输面板 s -->
+                <div class="mod-act">	
+                    <a class="act-link" href="" title="文件管理"><i class="icon icon-act"></i></a>
+                	<a class="act-link act" href="#" title="文件同步" style="display:none;"><!-- 在任务管理器页面加.act,其他页面去掉 -->
+                		<i class="icon icon-sync"></i>
+                		<span class="sync-num">56</span>
+                		<i class="icon icon-redpoint-error" style="display:none;"></i><!-- 任务有错误，则数字替换成这个icon -->
+                	</a>
+                </div>	
+                <!-- 传输面板 e -->
+                <!--搜索 s -->
+                <div class="mod-search"><!--获得焦点状态添加类名focus--><!--搜索中加类名searching--><!--输入完毕加类名istext,未输入任何东西不加-->
+                  <i class="icon icon-search"></i>
+                  <label>输入文件名</label>
+                  <input class="mod-input" type="text" aria-label="输入文件名并按下回车进行搜索" tabindex="0" placeholder="搜索全部微云">
+                	<a class="close" href="javascript:void(0)" aria-label="关闭搜索界面" hidefocus="on"><i class="icon icon-close"></i></a>
+                </div>		
+                <!--搜索 e -->	
+                <!-- mod-act-grop -->
+                <div class="mod-act-group">
+                    <div class="act-item">
+                        <div class="act-item-txt act-item-dwn">
+                            <a href="javascript:void(0)">下载客户端</a>
+                        </div>
+                    </div>
+                    <div class="act-item act-item-acc">
+                        <div class="act-item-txt">
+                            <a href="javascript:void(0)">账号<i class="icon icon-trig"></i></a>
+                        </div>
+                        <!-- 账户信息 S -->
+                        <div class="mod-bubble-menu mod-bubble-menu-acc with-border">
+                            <div class="acc-box">
+                                <div class="acc-box-hd">
+                                    <p class="tit"><span class="name">麦时同学麦时同学麦时同学麦时同学麦时同学麦时同学麦时同</span><i class="icon icon-vip-m icon-vip-1-off-m" title="VIP会员"></i></p>
+                                </div>
+                                <div class="acc-box-bd">
+                                    <div class="acc-info">
+                                        <div class="info-item info-item-cap">
+                                            <span class="info-item-label">容量:</span>
+                                            <span class="info-item-con">1023.4GB/3T</span>
+                                        </div>
+                                        <div class="info-item info-item-flow">
+                                            <span class="info-item-label">流量:</span>
+                                            <span class="info-item-con">19.9GB/20G</span>
+                                        </div>                                                    
+                                    </div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li class="menu-item">
+                                    <span class="txt">帮助与反馈</span>
+                                </li>
+                                <li class="menu-item">
+                                    <span class="txt">密码与安全</span>
+                                    <div class="spliter"></div>
+                                </li>
+                                <li class="menu-item">
+                                    <span class="txt">退出登录</span>
+                                </li>
+                            </ul>
+                        <!-- 账户信息 E -->                            
+                        </div>
+                    </div>
+                </div>
+                <!-- mod-act-grop -->
+			</div>
+			<!-- 顶部导航 e -->
+		</div>
+	</div>
+	<!-- 头部 E -->
+	<!-- 主体 S -->
+	<div class="layout-body">
+		<div class="layout-body-inner">
+			<!-- 左侧栏 s -->
+			<div class="layout-aside">
+				<!-- layout-aside-hd s -->
+				<div class="layout-aside-hd">
+					<!-- 用到的样式：mod-user.css -->
+
+					<!-- 用户头像 s -->
+					<div class="mod-user mod-user-vip "><!-- vip用户加类名 mod-user-vip,vip过期用户加类名 mod-user-vip-expire-->
+					    <div class="user-avatar">
+					        <a class="user-avatar-pic" href="#">
+					            <img src="../../img/temp/avatar.png" alt="用户昵称">
+					            <!-- 会员等级icon,等级n已开通状态为.icon-vip-n-on-m,过期状态为.icon-vip-n-off-m -->
+					            <i class="icon icon-vip-m icon-vip-1-off-m" title="VIP会员"></i>
+					            <!-- <i class="icon icon-vip" title="VIP会员"></i> -->
+					        </a>
+					    </div>
+					</div>
+					<!-- 用户头像 s -->
+
+				</div>
+				<!-- layout-aside-hd e -->
+				<!-- layout-aside-bd s -->
+				<div class="layout-aside-bd">
+                    <!-- 菜单 s -->
+                    <div class="mod-menu">
+                    	<div class="add-in">
+                    		<!-- 开通会员 | 续费会员 -->
+                    		<a href="#" class="btn btn-m btn-vip">续费</a>
+                    	</div>
+                    	<!-- 最近s -->
+                    	<div class="menu-item">
+                    		<div class="menu-item-bd">
+                    			<ul class="menu-list">
+                    				<li data-mod="recent">
+                    					<a href="javascript:void(0)"><i class="icon icon-ren"></i><span class="menu-tit">最近</span></a>
+                    				</li>
+                    			</ul>
+                    		</div>
+                    	</div>
+                    	<!-- 最近e -->
+                    	<!-- 文件s -->
+                    	<div class="menu-item">
+                    		<div class="menu-item-bd">
+                    			<ul class="menu-list">
+                    				<li data-mod="disk" class="cur">
+                    					<a href="javascript:void(0)"><i class="icon icon-all"></i><span class="menu-tit">全部</span></a>
+                    				</li>
+                    				<li data-mod="doc">
+                    					<a href="javascript:void(0)"><i class="icon icon-doc"></i><span class="menu-tit">文档</span></a>
+                    				</li>
+                    				<li data-mod="pic">
+                    					<a href="javascript:void(0)"><i class="icon icon-pic"></i><span class="menu-tit">图片</span></a>
+                    				</li>
+                    				<li data-mod="video">
+                    					<a href="javascript:void(0)"><i class="icon icon-video"></i><span class="menu-tit">视频</span></a>
+                    				</li>
+                                    <li data-mod="music">
+                                        <a href="javascript:void(0)"><i class="icon icon-music"></i><span class="menu-tit">音乐</span></a>
+                                    </li>
+
+
+                    			</ul>
+                    		</div>
+                    	</div>
+                    	<!-- 文件e -->
+                    	<!-- 我的s -->
+                    	<div class="menu-item">
+                    		<div class="menu-item-bd">
+                    			<ul class="menu-list">
+                                    <li data-mod="photo">
+                                        <a href="javascript:void(0)"><i class="icon icon-pho"></i><span class="menu-tit">照片</span></a>
+                                    </li>
+                                    <li data-mod="note">
+                                        <a href="javascript:void(0)"><i class="icon icon-note"></i><span class="menu-tit">笔记</span></a>
+                                    </li>
+                    				<li data-mod="safebox">
+                    					<a href="javascript:void(0)"><i class="icon icon-add-safebox"></i><span class="menu-tit">保险箱</span></a>
+                    				</li>
+                    				<li data-mod="share">
+                    					<a href="javascript:void(0)"><i class="icon icon-share"></i><span class="menu-tit">分享链接</span></a>
+                    				</li>
+                    				<li data-mod="recycle">
+                    					<a href="javascript:void(0)"><i class="icon icon-trash"></i><span class="menu-tit">回收站</span></a>
+                    				</li>
+                    			</ul>
+                    		</div>
+                    	</div>
+                    	<!-- 我的e -->
+
+                    </div>
+                    <!-- 菜单 s -->
+				</div>
+				<!-- layout-aside-bd e -->
+				<!-- layout-aside-ft s -->
+				<div class="layout-aside-ft">
+				</div>
+				<!-- layout-aside-hd e -->
+			</div>
+			<!-- 左侧栏 e -->
+			<!-- 主要内容 s -->
+			<div class="layout-main">
+				<!-- layout-main-hd s -->
+				<div class="layout-main-hd">
+					<!-- 操作条 s -->
+					<div class="mod-act-panel">
+						<div class="act-panel-inner clearfix">
+							<div class="mod-check"><i class="icon icon-check-s icon-checkbox"></i></div>
+							<!-- 面包屑导航 s -->
+							<!-- 面包屑导航 -->
+							<div class="mod-breadcrumb">
+								<ul class="breadcrumb clearfix">
+							    <li class="item return">
+							        <a href="javascript:void(0)"><i class="icon icon-bread-return"></i>返回</a>
+							    </li>
+							    <li class="item">
+							      <a href="javascript:void(0)"><i class="icon icon-safebox-inpath"></i>保险箱</a>
+							    </li>
+							    <!-- 普通面包屑导航 -->
+							    <li class="item">
+							      <a href="javascript:void(0)">全部</a>
+							    </li>
+							    <li class="item"><i class="icon icon-bread-next"></i><a href="javascript:void(0)">...</a></li>
+							    <li class="item"><i class="icon icon-bread-next"></i><a href="javascript:void(0)">自驾游呦呦呦有有照片发发反反复复反反复复</a></li>
+							    <li class="item"><i class="icon icon-bread-next"></i><a href="javascript:void(0)">自驾游照片</a></li>
+							    <!-- [ATTENTION!!] 如果是笔记内容，就给 a 加 .note-title -->
+							    <li class="item cur" style="display: none"><i class="icon icon-bread-next"></i><a class="note-title" href="javascript:void(0)">相思》是璀</a></li>
+							    <!-- 任务管理器中的面包屑导航 -->
+							    <li class="item" style="display: none">
+							      <a href="javascript:void(0)">任务列表</a>
+							    </li>
+							    <li class="item cur" style="display: none"><i class="icon icon-bread-next"></i><a href="javascript:void(0)"><i class="icon icon-safebox-inpath"></i>保险箱任务列表 (4)</a></li>
+								</ul>
+							</div>
+							<!-- 面包屑导航 e -->
+                            <!-- 添加 s -->
+                            <div class="mod-upload">
+                                <a class="btn btn-l btn-upload" href="#"><i class="icon icon-add"></i><span class="btn-txt">添加</span></a>
+                                <!-- 添加内容 s -->
+                                <!-- 账户信息 S -->
+                                <div class="mod-bubble-menu mod-bubble-menu-upload with-border">
+                                    <ul>
+                                        <li class="menu-item">
+                                            <b class="icon icon-upload-file"></b>
+                                            <span class="txt">上传文件</span>
+                                        </li>
+                                        <li class="menu-item">
+                                            <b class="icon icon-upload-dir"></b>
+                                            <span class="txt">上传文件夹</span>
+                                            <div class="spliter"></div>
+                                        </li>
+                                        <li class="menu-item">
+                                            <b class="icon icon-upload-offline"></b>
+                                            <span class="txt">离线下载</span>
+                                        </li>
+                                        <li class="menu-item">
+                                            <b class="icon icon-upload-note"></b>
+                                            <span class="txt">新建笔记</span>
+                                            <div class="spliter"></div>
+                                        </li>
+                                        <li class="menu-item">
+                                            <b class="icon icon-upload-create"></b>
+                                            <span class="txt">新建文件夹</span>
+                                        </li>                                                                                           
+                                    </ul>
+                                </div>
+                                <!-- 账户信息 E -->      
+                                <div class="mod-bubble-dropdown with-border top-right upload-bubble-dropdown" style="display: none">
+                                    <ul class="upload-dropdown clearfix">
+                                        <li class="upload-item">
+                                            <div class="inner">
+                                                <b class="icon icon-upload icon-upload-file"></b>
+                                                <p class="txt">上传文件</p>
+                                            </div>
+                                        </li>
+                                        <li class="upload-item">
+                                            <div class="inner">
+                                                <b class="icon icon-upload icon-upload-dir"></b>
+                                                <p class="txt">上传文件夹</p>
+                                            </div>
+                                        </li>
+                                        <li class="upload-item">
+                                            <div class="inner">
+                                                <b class="icon icon-upload icon-create-dir"></b>
+                                                <p class="txt">创建文件夹</p>
+                                            </div>
+                                        </li>
+                                        <li class="upload-item">
+                                            <div class="inner">
+                                                <b class="icon icon-upload icon-add-note"></b>
+                                                <p class="txt">添加笔记</p>
+                                            </div>
+                                        </li>
+                                        <li class="upload-item">
+                                            <div class="inner">
+                                                <b class="icon icon-upload icon-offline-download"></b>
+                                                <p class="txt">离线下载</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <b class="bubble-arrow-border"></b>
+                                    <b class="bubble-arrow"></b>
+                                </div>
+                                <!-- 添加内容 e -->
+                            </div>
+                            <!-- 添加 e-->                                
+                            <!-- 视图 s -->
+                            <div class="mod-view">
+                                <a class="btn btn-m" href="#"><i class="icon icon-list"></i><i class="icon icon-trig"></i></a>
+                                <!-- 添加内容 s -->
+                                <!-- 账户信息 S -->
+                                <div class="mod-bubble-menu with-border">
+                                    <ul>
+                                        <li class="menu-item act">
+                                            <i class="icon icon-sel"></i>
+                                            <span class="txt">列表</span>
+                                        </li>
+                                        <li class="menu-item">
+                                            <i class="icon icon-sel"></i>
+                                            <span class="txt">缩略图</span>
+                                            <div class="spliter"></div>
+                                        </li>
+                                        <li class="menu-item">
+                                            <i class="icon icon-sel"></i>
+                                            <span class="txt">文件名<i class="icon icon-sort"></i></span>
+                                        </li>
+                                        <li class="menu-item act">
+                                            <i class="icon icon-sel"></i>
+                                            <span class="txt">文件大小<i class="icon icon-sort"></i></span>
+                                        </li>
+                                        <li class="menu-item act up">
+                                            <i class="icon icon-sel"></i>
+                                            <span class="txt">修改时间<i class="icon icon-sort"></i></span>
+                                        </li>                                                                                           
+                                    </ul>
+                                </div>                                    
+                            </div>
+                            <!-- 视图 e -->
+						</div>
+					</div>
+					<!-- 操作条 e-->
+
+				</div>
+				<!-- layout-main-hd e -->
+				<!-- layout-main-bd s -->
+				<div class="layout-main-bd">
+                    <!--
+                        最近  _recent_body
+                        全部  _disk_body
+                        文档  _doc_body
+                        图片  _pic_body
+                        视频  _video_body
+                        音乐  _musci_body
+                        照片  _photo_body
+                        笔记  _note_body
+                        保险箱  _safebox_body
+                        分享链接  _share_body
+                        回收站  _recycle_body
+                    -->
+                    <!-- 全部 s-->
+					<!-- [ATTENTION!!] 多选后 添加 .block-hover -->
+					<div id="_disk_body" class="mod-list-group">
+                        <!-- 列表头 s -->
+                        <div class="list-group-hd">
+                            <div class="list-group-tit-wrap">
+                                <div class="list-group-tit name">名称<i class="icon icon-sort"></i></div>
+                                <div class="list-group-tit size">大小<i class="icon icon-sort"></i></div>
+                                <div class="list-group-tit time cur">上次修改时间<i class="icon icon-sort"></i></div>  
+                            </div>
+                        </div>
+                        <!-- 列表头 e -->
+    					<div class="list-group-bd">
+    						<ul class="list-group">
+    							<!-- [ATTENTION!!] 选中时加 .act -->
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<!-- [ATTENTION!!] 列表模式下，文件类型为 .icon-xxx-m -->
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">[ATTENTION!!] 点这个，出文件夹右键菜单</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5222M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span>
+    								</div>
+    							</li>
+    							<li class="list-group-item act" id="js-menu-two-hook">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb">
+    										<img src="../../img/slice/doctype/icon-pic-m.png" alt="" class="icon icon-m icon-file-m">
+    									<!-- <i class="icon icon-m icon-file-m"></i> --></div>
+    									<div class="info">
+    										<span class="tit">[ATTENTION!!] 点这个出 空白处 右键菜单</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span>
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">[ATTENTION!!] 点这个列表出空目录状态！！</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item on" id="js-menu-file-single-hook">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-pic-m"></i></div>
+    									<div class="info">
+    										<span class="tit">[ATTENTION!!] 点这个出 文件 右键菜单</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span>
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span>
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><img src="http://qzonestyle.gtimg.cn/aoi/sola/20160805125412_wG00ahVBC1.jpg" alt="文件名称"></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><img src="http://qzonestyle.gtimg.cn/aoi/sola/20160805125412_wG00ahVBC1.jpg" alt="文件名称"></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><i class="icon icon-m icon-file-m"></i></div>
+    									<div class="info">
+    										<span class="tit">前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    							<li class="list-group-item">
+    								<div class="item-tit">
+    									<div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+    									<div class="thumb"><img src="../../img/temp/pic.png" alt="文件名称" class="icon icon-m icon-pic-m default"></div>
+    									<div class="info">
+    										<span class="tit ellipsis">前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化前端开发眼里的交互优化</span>
+    									</div>
+    								</div>
+    								<div class="item-info">
+    									<span class="item-info-list">
+    										<span class="txt txt-size">1.5M</span>
+    									</span>
+    									<span class="item-info-list">
+    										<span class="txt txt-time">2015-12-16 20:05</span>
+    									</span
+    								</div>
+    							</li>
+    						</ul>
+    					</div>
+				    </div>
+					<!--全部 e-->
+                    <!--文档 s-->
+                    <div id="_doc_body" class="mod-list-group">
+                        <!-- 列表头 s -->
+                        <div class="list-group-hd">
+                            <div class="list-group-tit-wrap">
+                                <div class="list-group-tit name">名称<i class="icon icon-sort"></i></div>
+                                <div class="list-group-tit size">大小<i class="icon icon-sort"></i></div>
+                                <div class="list-group-tit time cur">上次修改时间<i class="icon icon-sort"></i></div>  
+                            </div>
+                        </div>
+                        <!-- 列表头 e -->
+                        <div class="list-group-bd">
+                            <ul class="list-group">
+                                <!-- [ATTENTION!!] 选中时加 .act -->
+                                <li class="list-group-item">
+                                    <div class="item-tit">
+                                        <div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+                                        <!-- [ATTENTION!!] 列表模式下，文件类型为 .icon-xxx-m -->
+                                        <div class="thumb"><i class="icon icon-m icon-keynote-m"></i></div>
+                                        <div class="info">
+                                            <span class="tit">前端开发眼里的交互优化</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <span class="item-info-list">
+                                            <span class="txt txt-size">1.5222M</span>
+                                        </span>
+                                        <span class="item-info-list">
+                                            <span class="txt txt-time">2015-12-16 20:05</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="item-tit">
+                                        <div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+                                        <!-- [ATTENTION!!] 列表模式下，文件类型为 .icon-xxx-m -->
+                                        <div class="thumb"><i class="icon icon-m icon-keynote-m"></i></div>
+                                        <div class="info">
+                                            <span class="tit">前端开发眼里的交互优化</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <span class="item-info-list">
+                                            <span class="txt txt-size">1.5222M</span>
+                                        </span>
+                                        <span class="item-info-list">
+                                            <span class="txt txt-time">2015-12-16 20:05</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="item-tit">
+                                        <div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+                                        <!-- [ATTENTION!!] 列表模式下，文件类型为 .icon-xxx-m -->
+                                        <div class="thumb"><i class="icon icon-m icon-keynote-m"></i></div>
+                                        <div class="info">
+                                            <span class="tit">前端开发眼里的交互优化</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <span class="item-info-list">
+                                            <span class="txt txt-size">1.5222M</span>
+                                        </span>
+                                        <span class="item-info-list">
+                                            <span class="txt txt-time">2015-12-16 20:05</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="item-tit">
+                                        <div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+                                        <!-- [ATTENTION!!] 列表模式下，文件类型为 .icon-xxx-m -->
+                                        <div class="thumb"><i class="icon icon-m icon-keynote-m"></i></div>
+                                        <div class="info">
+                                            <span class="tit">前端开发眼里的交互优化</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <span class="item-info-list">
+                                            <span class="txt txt-size">1.5222M</span>
+                                        </span>
+                                        <span class="item-info-list">
+                                            <span class="txt txt-time">2015-12-16 20:05</span>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--文档 e-->
+                    <!--视频 s-->
+                    <div id="_video_body" class="mod-list-group">
+                        <!-- 列表头 s -->
+                        <div class="list-group-hd">
+                            <div class="list-group-tit-wrap">
+                                <div class="list-group-tit name">名称<i class="icon icon-sort"></i></div>
+                                <div class="list-group-tit size">大小<i class="icon icon-sort"></i></div>
+                                <div class="list-group-tit time cur">上次修改时间<i class="icon icon-sort"></i></div>  
+                            </div>
+                        </div>
+                        <!-- 列表头 e -->
+                        <div class="list-group-bd">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="item-tit">
+                                        <div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+                                        <div class="thumb">
+                                            <span class="duration"><span class="inner">0:56</span></span>
+                                            <img src="../../img/temp/pic.png" alt="文件名称">
+                                        </div>
+                                        <div class="info">
+                                            <span class="tit">前端开发眼里的交互优化</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <span class="item-info-list">
+                                            <span class="txt txt-size">1.5222M</span>
+                                        </span>
+                                        <span class="item-info-list">
+                                            <span class="txt txt-time">2015-12-16 20:05</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="item-tit">
+                                        <div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+                                        <div class="thumb">
+                                            <span class="duration"><span class="inner">0:56</span></span>
+                                            <img src="../../img/temp/pic.png" alt="文件名称">
+                                        </div>
+                                        <div class="info">
+                                            <span class="tit">前端开发眼里的交互优化</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <span class="item-info-list">
+                                            <span class="txt txt-size">1.5222M</span>
+                                        </span>
+                                        <span class="item-info-list">
+                                            <span class="txt txt-time">2015-12-16 20:05</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                 <li class="list-group-item">
+                                    <div class="item-tit">
+                                        <div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+                                        <div class="thumb">
+                                            <span class="duration"><span class="inner">0:56</span></span>
+                                            <img src="../../img/temp/pic.png" alt="文件名称">
+                                        </div>
+                                        <div class="info">
+                                            <span class="tit">前端开发眼里的交互优化</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <span class="item-info-list">
+                                            <span class="txt txt-size">1.5222M</span>
+                                        </span>
+                                        <span class="item-info-list">
+                                            <span class="txt txt-time">2015-12-16 20:05</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="item-tit">
+                                        <div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+                                        <div class="thumb">
+                                            <span class="duration"><span class="inner">0:56</span></span>
+                                            <img src="../../img/temp/pic.png" alt="文件名称">
+                                        </div>
+                                        <div class="info">
+                                            <span class="tit">前端开发眼里的交互优化</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <span class="item-info-list">
+                                            <span class="txt txt-size">1.5222M</span>
+                                        </span>
+                                        <span class="item-info-list">
+                                            <span class="txt txt-time">2015-12-16 20:05</span>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--视频 e-->
+                    <!--音乐 s-->
+                    <div id="_music_body" class="mod-list-group">
+                        <!-- 列表头 s -->
+                        <div class="list-group-hd">
+                            <div class="list-group-tit-wrap">
+                                <div class="list-group-tit name">名称<i class="icon icon-sort"></i></div>
+                                <div class="list-group-tit size">大小<i class="icon icon-sort"></i></div>
+                                <div class="list-group-tit time cur">上次修改时间<i class="icon icon-sort"></i></div>  
+                            </div>
+                        </div>
+                        <!-- 列表头 e -->
+                        <div class="list-group-bd">
+                            <ul class="list-group">
+                                <!-- [ATTENTION!!] 选中时加 .act -->
+                                <li class="list-group-item">
+                                    <div class="item-tit">
+                                        <div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+                                        <!-- [ATTENTION!!] 列表模式下，文件类型为 .icon-xxx-m -->
+                                        <div class="thumb"><i class="icon icon-m icon-audio-m"></i></div>
+                                        <div class="info">
+                                            <span class="tit">前端开发眼里的交互优化</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <span class="item-info-list">
+                                            <span class="txt txt-size">1.5222M</span>
+                                        </span>
+                                        <span class="item-info-list">
+                                            <span class="txt txt-time">2015-12-16 20:05</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="item-tit">
+                                        <div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+                                        <!-- [ATTENTION!!] 列表模式下，文件类型为 .icon-xxx-m -->
+                                        <div class="thumb"><i class="icon icon-m icon-audio-m"></i></div>
+                                        <div class="info">
+                                            <span class="tit">前端开发眼里的交互优化</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <span class="item-info-list">
+                                            <span class="txt txt-size">1.5222M</span>
+                                        </span>
+                                        <span class="item-info-list">
+                                            <span class="txt txt-time">2015-12-16 20:05</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="item-tit">
+                                        <div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+                                        <!-- [ATTENTION!!] 列表模式下，文件类型为 .icon-xxx-m -->
+                                        <div class="thumb"><i class="icon icon-m icon-audio-m"></i></div>
+                                        <div class="info">
+                                            <span class="tit">前端开发眼里的交互优化</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <span class="item-info-list">
+                                            <span class="txt txt-size">1.5222M</span>
+                                        </span>
+                                        <span class="item-info-list">
+                                            <span class="txt txt-time">2015-12-16 20:05</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="item-tit">
+                                        <div class="label"><i class="icon icon-check-s icon-checkbox"></i></div>
+                                        <!-- [ATTENTION!!] 列表模式下，文件类型为 .icon-xxx-m -->
+                                        <div class="thumb"><i class="icon icon-m icon-audio-m"></i></div>
+                                        <div class="info">
+                                            <span class="tit">前端开发眼里的交互优化</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <span class="item-info-list">
+                                            <span class="txt txt-size">1.5222M</span>
+                                        </span>
+                                        <span class="item-info-list">
+                                            <span class="txt txt-time">2015-12-16 20:05</span>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--音乐 e-->
+                    <!--音乐 s-->
+                    <!-- 笔记 s -->
+                    <div id="_note_body" class="lay-main-con">
+                        <div class="inner">
+                            <div class="wrap">
+                                <div class="note-list">
+                                    <dl>
+                                        <dt>今天</dt>
+                                        <dd>
+                                            <div class="icon-update-done"></div>
+                                            <div class="note-list-item" tabindex="0">
+                                                <em>测试一下看看最长的长度是多少，要保持和PC的一直的长度和逻辑...</em><!--截取做多30个字，后面添加三个英文的句号作为省略号-->
+                                                <p>2014-09-15 09:53</p>
+                                            </div>
+                                        </dd>
+                                        <dd class="ui-selected">
+                                            <div class="icon-update-ing"></div>
+                                            <div class="note-list-item note-list-item-has-img" tabindex="0">
+                                                <img src="" />
+                                                <em>tesdsfsljfsjfja;fkl;afj;dajfklfja;jf;ajf;amn</em>
+                                                <p>2014-09-15 09:49</p>
+                                            </div>
+                                        </dd>
+                                        <dd>
+                                            <div class="note-list-item" tabindex="0">
+                                                <em>test</em>
+                                                <p>2014-09-15 09:33</p>
+                                            </div>
+                                        </dd>
+                                        <dd>
+                                            <div class="note-list-item" tabindex="0">
+                                                <em>test</em>
+                                                <p>2014-09-15 09:33</p>
+                                            </div>
+                                        </dd>
+                                        <dd>
+                                            <div class="note-list-item" tabindex="0">
+                                                <em>test</em>
+                                                <p>2014-09-15 09:33</p>
+                                            </div>
+                                        </dd>
+                                        <dd>
+                                            <div class="note-list-item" tabindex="0">
+                                                <em>终于出来了</em>
+                                                <p>2014-09-15 09:33</p>
+                                            </div>
+                                        </dd>
+                                        <dd>
+                                            <div class="note-list-item" tabindex="0">
+                                                <em>应该有了吧</em>
+                                                <p>2014-09-15 09:33</p>
+                                            </div>
+                                        </dd>
+                                        <dd>
+                                            <div class="note-list-item" tabindex="0">
+                                                <em>还有没有么</em>
+                                                <p>2014-09-15 09:33</p>
+                                            </div>
+                                        </dd>
+                                        <dd>
+                                            <div class="note-list-item" tabindex="0">
+                                                <em>快点出口来</em>
+                                                <p>2014-09-15 09:33</p>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="note-editor">
+                                    <!--编辑器区域-->
+                                    <iframe class="is-wired" frameborder="0"></iframe>
+
+                                    <!-- tips -->
+                                    <div class="mod-tips">
+                                      <span class="tips with-border"><i class="icon icon-assert"></i>笔记显示异常，请在新标签中查看<a class="txt-link" href="#">新标签打开</a><i class="icon icon-tips-close js-tips-close">关闭</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                    
+				    </div>
+                    <!--笔记 e-->
+                </div>
+				<!-- layout-main-bd e -->
+			</div>
+			<!-- 主要内容 e -->
+		</div>
+	</div>
+	<!-- 主体 S -->
+</div>
+<!-- wrapper e -->
+
+<!-- 演示脚本，前台GG请删除 S -->
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qz-act/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="../../js/wy.js"></script>
+<script type="text/javascript" src="../../js/bubble.js"></script>
+<script type="text/javascript" src="../../js/clipboard.js"></script>
+<script type="text/javascript" src="../../js/task-ctrl.js"></script>
+<script type="text/javascript" src="../../js/msg.js"></script>
+<script type="text/javascript">
+    //常用声明
+var layoutMainBd = $(".layout-main-bd"),
+    modMenuLi = $(".mod-menu li"),
+    topAction = $(".mod-check , .mod-breadcrumb , .mod-view"); //全选按钮、面包屑、视图模式;
+
+
+
+
+// location hash 显示对应菜单内容
+var locationHash = window.location.hash.substring(1);
+var menuIndex = '#_' + locationHash + "_body";
+layoutMainBd.children().hide();
+$(menuIndex).show();
+
+//hash为空和全部文件
+if(locationHash == ""){
+    $("#_disk_body").show();
+    topAction.show();
+}else if(locationHash == "disk"){
+    $("#_disk_body").show();
+    topAction.show();
+}else{
+    topAction.hide();
+}
+
+
+// location hash 显示对应菜单选中态
+for(var i =0 ; i<modMenuLi.length ; i++ ){
+    var dataValue = modMenuLi.eq(i).attr("data-mod");
+    //hash为空
+    if(locationHash==""){
+        dataValue == "disk" ? modMenuLi.eq(i).addClass("cur") : modMenuLi.eq(i).removeClass("cur")
+    }else{
+        dataValue == locationHash ? modMenuLi.eq(i).addClass("cur") : modMenuLi.eq(i).removeClass("cur")
+    }   
+}
+
+// 左侧菜单点击显示右侧内容
+$(".mod-menu li").click(
+    function () {       
+        var targetName = $(this).attr("data-mod");
+
+        //选中态
+        modMenuLi.removeClass("cur");
+        $(this).addClass("cur");
+        
+        //顶部操作（全选按钮、面包屑、视图模式）
+        targetName == "disk" ? topAction.show() : topAction.hide();
+
+        //右侧内容显示
+        var targetId = "#_" + targetName + "_body";     
+        layoutMainBd.children().hide();
+        $(targetId).show();
+
+        //改变hash值
+        window.location.hash =  targetName;
+    }
+);
+</script>
+<!-- <script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script> -->
+<!-- 演示脚本，前台GG请删除 E -->
+</body>
+</html>
