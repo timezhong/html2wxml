@@ -58,7 +58,7 @@ const holder = document.getElementById('dropTarget')
                 });
                 //view
                 replace({
-                    regex: "(<body|<article|<aside|<ul|<li|<ol|<caption|<dd|<dl|<dt|<footer|<header|<nav|<section|<table|<thead|<tbody|<tr|<td|<th|<h1|<h2|<h3|<h4|<h5|<h6|<div|<p)",
+                    regex: "(<body|<article|<aside|<ul|<li|<ol|<caption|<dd|<dl|<dt|<footer|<header|<section|<table|<thead|<tbody|<tr|<td|<th|<h1|<h2|<h3|<h4|<h5|<h6|<div|<p)",
                     replacement: "<view",
                     paths: [file],
                 });
@@ -80,6 +80,18 @@ const holder = document.getElementById('dropTarget')
                  replace({
                     regex: "(<img)",
                     replacement: "<image",
+                    paths: [file],
+                 });
+               //image
+                 replace({
+                    regex: "(<nav>)",
+                    replacement: "<view>",
+                    paths: [file],
+                 });
+                //image
+                 replace({
+                    regex: "(<nav )",
+                    replacement: "<view ",
                     paths: [file],
                  });
                  //text
