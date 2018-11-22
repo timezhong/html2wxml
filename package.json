@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "appdmg": "appdmg appdmg.json html2wxml-1.0.dmg",
+    "appdmg": "appdmg appdmg.json html2wxml-2.0.dmg",
     "build-all": "electron-packager . --all --overwrite",
     "build-mac": "electron-packager ./ html2wxml --platform=darwin --arch=x64 --icon=./img/icon.icns --overwrite --out ./release ",
     "build-win64": "electron-packager ./ html2wxml --platform=win32 --arch=x64 --icon=./img/icon.ico --overwrite --out ./release",

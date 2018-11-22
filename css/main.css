@@ -4,43 +4,74 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 }
 
 body, input, textarea, select, button {
-    font-family: punctuation,"PingFangSC-Regular","Microsoft Yahei","sans-serif";
-    -webkit-font-smoothing: subpixel-antialiased;
+  font-family: punctuation,"PingFangSC-Regular","Microsoft Yahei","sans-serif";
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 html,body{
   height: 100%;
 }
 body{
-background-image:url("../img/bg.jpg");
-background-size: cover;
-background-position: center;
-background-color:#f1f1f1; /* fallback for old browsers */ 
-background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color:#c8dadf; /* fallback for old browsers */ 
+  background-repeat: no-repeat;
 }
 
 #dropTarget{
-      position: absolute;
-      left: 5px;
-      top: 5px;
-      right: 5px;
-      bottom: 5px;
-      border: 1px dashed #DBD8D8;
-      -moz-border-radius: 5px;
-      -webkit-border-radius: 5px;
-      border-radius: 5px;
-      text-align: center;
-      font-size:18px;
-      color: #DBD8D8;
-      line-height: 100%;
-      font-weight: normal;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  outline:2px dashed #92b0b3;
+  outline-offset: -10px;
+  text-align: center;
+  font-size:16px;
+  color: #DBD8D8;
+  line-height: 100%;
+  font-weight: normal;
+  -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+  transition: outline-offset .15s ease-in-out, background-color .15s linear;
 }
-
-#dropTarget p{
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 50%;
-      text-align: center;
-      margin: -10px 0 0;
+#dropTarget.act{
+  outline-offset: -15px;
+  background: #fff;
 }
-
+#dropTarget .info-container{
+  color: #0f3c4b;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+#dropTarget .info-container .info-icon{
+  opacity: 0.8
+}
+#dropTarget .info-container .info-icon svg{
+  fill: #92b0b3
+}
+#dropTarget .info-container .info-con{
+  margin: 20px 0 0
+}
+#dropTarget .info-container span{
+  display: block;
+  text-align: center;
+}
+#dropTarget .info-container .txt{
+  margin: 5px 0 0;
+  font-size: 12px;
+  opacity: 0.5
+}
+#dropTarget .txt-succ{
+  display: none;
+}
+#dropTarget.act .txt-succ,
+#dropTarget.succ .txt-default{
+  display: none
+}
+#dropTarget.act .txt-default,
+#dropTarget.succ .txt-succ{
+  display: block;
+}
