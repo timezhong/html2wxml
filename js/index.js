@@ -100,6 +100,17 @@ const holder = document.getElementById('dropTarget')
                         replacement: '<image mode=""',
                         paths: [file],
                      });
+                     // input checkbox
+                     replace({
+                        regex: '(<input.*?type="checkbox")',
+                        replacement: '<checkbox',
+                        paths: [file],
+                     });
+                     replace({
+                        regex: '(<input.*?type="radio")',
+                        replacement: '<radio',
+                        paths: [file],
+                     });
                    //nav
                      replace({
                         regex: "(<nav>)",

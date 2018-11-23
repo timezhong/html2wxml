@@ -23,4 +23,4 @@
 ## 下载
 **暂时支持mac版**
 
-[mac版](https://github.com/timezhong/html2wxml/raw/master/html2wxml-1.0.dmg)
+[mac版](https://share.weiyun.com/5wLLObh)
